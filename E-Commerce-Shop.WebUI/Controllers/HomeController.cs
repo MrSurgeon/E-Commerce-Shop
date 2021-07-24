@@ -1,14 +1,22 @@
+
+
+using Microsoft.AspNetCore.Mvc;
+
 namespace E_Commerce_Shop.WebUI.Controllers
 {
-    public class HomeController
+    public class HomeController : Controller
     {
-        public string Index()
+        public IActionResult Index()
         {
-            return "Home/Index";
+            return View();
         }
-        public string About()
+        public IActionResult About()
         {
-            return "Home/About";
+            return View();
+        }
+        public IActionResult Contact()
+        {
+            return View("myView");
         }
     }
 }

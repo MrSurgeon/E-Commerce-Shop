@@ -1,14 +1,20 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace E_Commerce_Shop.WebUI.Controllers
 {
-    public class ProductController
+    public class ProductController : Controller
     {
-        public string List()
+        public IActionResult Index()
         {
-            return "Product/List";
+            return View();
         }
-        public string Details()
+        public IActionResult List()
         {
-            return "Product/Details";
+            return View();
+        }
+        public IActionResult Details(int? id)
+        {
+            return View();
         }
     }
 }

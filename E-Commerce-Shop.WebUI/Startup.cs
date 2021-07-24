@@ -27,7 +27,7 @@ namespace E_Commerce_Shop.WebUI
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller}/{action}/{id?}"
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
                 );
             });
         }

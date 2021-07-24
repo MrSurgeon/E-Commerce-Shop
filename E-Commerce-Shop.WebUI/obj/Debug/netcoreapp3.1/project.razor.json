@@ -14400,6 +14400,37 @@
     "CSharpLanguageVersion": 800
   },
   "RootNamespace": "E_Commerce_Shop.WebUI",
-  "Documents": [],
+  "Documents": [
+    {
+      "FilePath": "c:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Home\\about.cshtml",
+      "TargetPath": "Views\\Home\\about.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Product\\index.cshtml",
+      "TargetPath": "Views\\Product\\index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Product\\list.cshtml",
+      "TargetPath": "Views\\Product\\list.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Product\\details.cshtml",
+      "TargetPath": "Views\\Product\\details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Home\\myView.cshtml",
+      "TargetPath": "Views\\Home\\myView.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Home\\index.cshtml",
+      "TargetPath": "Views\\Home\\index.cshtml",
+      "FileKind": "mvc"
+    }
+  ],
   "SerializationFormat": "0.2"
 }
