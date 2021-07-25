@@ -1,3 +1,4 @@
+@model Product
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +10,9 @@
 </head>
 
 <body>
-    Product/Details
+    <p>Ürün Adı:@Model.Name</p>
+    <p>Ürün Fiyatı:@Model.Price</p>
+    <p>Ürün Açıklama:@Model.Description</p>
 </body>
 
 </html>

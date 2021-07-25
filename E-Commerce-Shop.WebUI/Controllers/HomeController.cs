@@ -1,5 +1,6 @@
 
 
+using System;
 using Microsoft.AspNetCore.Mvc;
 
 namespace E_Commerce_Shop.WebUI.Controllers
@@ -8,6 +9,8 @@ namespace E_Commerce_Shop.WebUI.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.Greeting = (DateTime.Now.Hour) > 12 ? "İyi Günler" : "Günaydın";
+            ViewBag.Name = "Enes";
             return View();
         }
         public IActionResult About()
