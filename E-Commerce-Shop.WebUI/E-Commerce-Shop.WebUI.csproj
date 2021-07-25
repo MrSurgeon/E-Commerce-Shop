@@ -4,5 +4,4 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>E_Commerce_Shop.WebUI</RootNamespace>
   </PropertyGroup>
-
 </Project>
