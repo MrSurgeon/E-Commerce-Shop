@@ -16,7 +16,6 @@ namespace E_Commerce_Shop.WebUI.Controllers
 
             var productViewModel = new ProductViewModel()
             {
-                Category = new Category() { Name = "Telefonlar" },
                 Products = new List<Product>()
                 {
                     new Product(){Name="Samsung S3",Price=1000,Description="Smart Phone"},

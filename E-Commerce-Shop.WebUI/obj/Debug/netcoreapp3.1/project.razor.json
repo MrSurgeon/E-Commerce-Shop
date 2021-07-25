@@ -12432,6 +12432,23 @@
         }
       },
       {
+        "HashCode": -1982209346,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__CategoriesViewComponentTagHelper",
+        "AssemblyName": "E-Commerce-Shop.WebUI",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:categories"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__CategoriesViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "Categories"
+        }
+      },
+      {
         "HashCode": 141407075,
         "Kind": "Components.Bind",
         "Name": "Bind",
@@ -14429,6 +14446,11 @@
     {
       "FilePath": "c:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Product\\details.cshtml",
       "TargetPath": "Views\\Product\\details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Shared\\ViewComponents\\Categories\\default.cshtml",
+      "TargetPath": "Views\\Shared\\ViewComponents\\Categories\\default.cshtml",
       "FileKind": "mvc"
     },
     {

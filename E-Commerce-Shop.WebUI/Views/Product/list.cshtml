@@ -28,25 +28,27 @@
         <main>
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
-                        <h1 class="@popularClass">@Model.Category.Name</h1>
+                    <div class="col-md-3">
+                        @await Component.InvokeAsync("Categories")
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">
+                            @if (!products.Any())
+                            {
+                                @await Html.PartialAsync("_noProduct")
+                            }
+                            else
+                            {
+                                @foreach (var product in products)
+                                {
+                                    <div class="col-3">
+                                        @await Html.PartialAsync("_product",product)
+                                    </div>
+                                }
+                            }
+                        </div>
                     </div>
                 </div>
-                @if (!products.Any())
-                {
-                    @await Html.PartialAsync("_noProduct")
-                }
-                else
-                {
-                    <div class="row">
-                        @foreach (var product in products)
-                        {
-                            <div class="col-3">
-                                @await Html.PartialAsync("_product",product)
-                            </div>
-                        }
-                    </div>
-                }
             </div>
         </main>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

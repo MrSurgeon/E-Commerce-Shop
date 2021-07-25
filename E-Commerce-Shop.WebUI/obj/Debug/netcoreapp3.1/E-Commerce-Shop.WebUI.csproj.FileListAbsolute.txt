@@ -40,3 +40,4 @@ C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\obj\Debug
 C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_header.cshtml.g.cs
 C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_noProduct.cshtml.g.cs
 C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_product.cshtml.g.cs
+C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Categories\default.cshtml.g.cs
