@@ -14429,8 +14429,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Product\\index.cshtml",
       "TargetPath": "Views\\Product\\index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Shared\\Components\\Categories\\default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Categories\\default.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14446,11 +14456,6 @@
     {
       "FilePath": "c:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Product\\details.cshtml",
       "TargetPath": "Views\\Product\\details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Shared\\ViewComponents\\Categories\\default.cshtml",
-      "TargetPath": "Views\\Shared\\ViewComponents\\Categories\\default.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14476,6 +14481,11 @@
     {
       "FilePath": "c:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Shared\\_product.cshtml",
       "TargetPath": "Views\\Shared\\_product.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     }
   ],
