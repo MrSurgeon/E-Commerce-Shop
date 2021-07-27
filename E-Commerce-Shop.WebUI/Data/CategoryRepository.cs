@@ -12,7 +12,9 @@ namespace E_Commerce_Shop.WebUI.Data
                 {
                     new Category(){CategoryId=1, Name = "Telefonlar",Description="Telefon Kategorisi" },
                     new Category(){CategoryId=2,Name = "Bilgisayarlar",Description="Bilgisayar Kategorisi" },
-                    new Category(){CategoryId=3,Name = "elektronik",Description="Elektronik Kategorisi" },
+                    new Category(){CategoryId=3,Name = "Elektronik",Description="Elektronik Kategorisi" },
+                    new Category(){CategoryId=4,Name = "Beyaz Eşya",Description="Beyaz Eşya Kategorisi" },
+
                  };
         }
         private static List<Category> _categories;

@@ -9,6 +9,7 @@ namespace E_Commerce_Shop.WebUI.ViewComponents
     {
         public IViewComponentResult Invoke()
         {
+            ViewBag.SelectedCategory = RouteData.Values["id"];
             return View(CategoryRepository.Categories);
         }
     }

@@ -5,7 +5,8 @@
 @section Categories{
 @await Component.InvokeAsync("Categories")
 }
-<div class="row">
+<div class="row row-cols-3 row-cols-md-3">
+
     @if (!products.Any())
     {
         @await Html.PartialAsync("_noProduct")
@@ -14,7 +15,7 @@
     {
         @foreach (var product in products)
         {
-            <div class="col-3">
+            <div class="col mb-4 ">
                 @await Html.PartialAsync("_product",product)
             </div>
         }
