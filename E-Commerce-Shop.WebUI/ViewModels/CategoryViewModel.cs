@@ -3,8 +3,8 @@ using E_Commerce_Shop.Entity;
 
 namespace E_Commerce_Shop.WebUI.ViewModels
 {
-    public class ProductViewModel
+    public class CategoryViewModel
     {
-        public List<Product> Products { get; set; }
+        public List<Category> Categories { get; set; }
     }
 }

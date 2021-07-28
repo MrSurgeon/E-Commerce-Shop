@@ -10,31 +10,14 @@
 </head>
 
 <body>
-
     @await Html.PartialAsync("_navbar")
-    @RenderSection("Jumbotron", required: false)
-
     <main>
         <div class="container pt-2">
-            @if (IsSectionDefined("Categories"))
-            {
-                <div class="row">
-                    <div class="col-md-3">
-                        @RenderSection("Categories", required: false)
-                    </div>
-                    <div class="col-md-9">
-                        @RenderBody()
-                    </div>
+            <div class="row">
+                <div class="col-md-12">
+                    @RenderBody()
                 </div>
-            }
-            else
-            {
-                <div class="row">
-                    <div class="col-md-12">
-                        @RenderBody()
-                    </div>
-                </div>
-            }
+            </div>
         </div>
     </main>
     <footer class="py-5 bg-dark text-white text-center">

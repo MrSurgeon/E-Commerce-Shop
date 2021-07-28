@@ -4,29 +4,21 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace E_Commerce_Shop.WebUI.Controllers
 {
-    public class HomeController : Controller
+    public class ShopController : Controller
     {
         private readonly IProductRepository _productRepository;
 
-        public HomeController(IProductRepository productRepository)
+        public ShopController(IProductRepository productRepository)
         {
             _productRepository = productRepository;
         }
         public IActionResult Index()
         {
-            var productViewModel = new ProductListViewModel()
+            var productListViewModel = new ProductListViewModel()
             {
                 Products = _productRepository.GetAll()
             };
-            return View(productViewModel);
-        }
-        public IActionResult About()
-        {
-            return View();
-        }
-        public IActionResult Contact()
-        {
-            return View("myView");
+            return View(productListViewModel);
         }
     }
 }

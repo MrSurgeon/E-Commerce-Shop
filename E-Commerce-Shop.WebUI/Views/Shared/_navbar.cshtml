@@ -1,21 +1,28 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
     <div class="container">
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <a class="navbar-brand" href="/">E-Commerce-Shop</a>
+            <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" asp-controller="Shop" asp-action="Index">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Product/List">Products</a>
+                    <a class="nav-link" href="#">Card</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Orders</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" asp-controller="Product" asp-action="Create">Add Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Product" asp-action="List">Admin Products</a>
                 </li>
             </ul>
         </div>
         <form asp-controller="product" asp-action="list" method="GET" class="form-inline">
             <input name="q" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
 </nav>

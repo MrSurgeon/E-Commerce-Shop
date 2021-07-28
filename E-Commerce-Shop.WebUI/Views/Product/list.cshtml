@@ -1,10 +1,10 @@
-@model ProductViewModel
+@model ProductListViewModel
 @{
     var products = @Model.Products;
 }
-@section Categories{
+
 @await Component.InvokeAsync("Categories")
-}
+
 <div class="row">
     @if (!products.Any())
     {

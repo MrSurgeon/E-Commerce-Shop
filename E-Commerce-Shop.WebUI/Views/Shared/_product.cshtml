@@ -1,16 +1,18 @@
 @model Product
-<div class="card h-100">
+<div class="card h-100 ">
     <div class="h-75 d-flex">
         <img src="/images/@Model.ImageUrl" class="card-img-top align-self-center" alt="...">
     </div>
     <div class="card-body">
         <h5 class="card-title">@Model.Name</h5>
-        <p class="card-text">@Model.Description</p>
-        <a href="/product/details/@Model.ProductId" class="btn btn-primary btn-sm">İncele</a>
-        <a href="/product/Edit/@Model.ProductId" class="btn btn-primary btn-sm">Edit</a>
-        <form method="POST" action="/product/Delete" style="display: inline-block;">
-            <input type="hidden" asp-for="@Model.ProductId" name="productId">
-            <button type="submit" class="btn btn-primary btn-sm">Delete</button>
-        </form>
+        <small class="text-muted">
+            <i class="fas fa-lira-sign"></i> @Model.Price
+        </small>
+    </div>
+    <div class="card-footer text-center">
+        <a asp-controller="Shop" asp-action="Details" asp-route-id="@Model.ProductId"
+            class="btn btn-primary btn-sm">İncele</a>
+        <a asp-controller="Shop" asp-action="AddToCard" asp-route-id="@Model.ProductId"
+            class="btn btn-primary btn-sm">Add To Card</a>
     </div>
 </div>

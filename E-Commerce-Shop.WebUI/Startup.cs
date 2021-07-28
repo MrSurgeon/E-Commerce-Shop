@@ -17,7 +17,9 @@ namespace E_Commerce_Shop.WebUI
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
             services.AddScoped<IProductRepository, EfCoreProductRepository>();
+            services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<IProductService, ProductManager>();
             services.AddControllersWithViews();
         }
