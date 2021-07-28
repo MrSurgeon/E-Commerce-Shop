@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\E-Commerce-Shop.DataAccess\E-Commerce-Shop.DataAccess.csproj" />
     <ProjectReference Include="..\E-Commerce-Shop.Entity\E-Commerce-Shop.Entity.csproj" />
+    <ProjectReference Include="..\E-Commerce-Shop.Business\E-Commerce-Shop.Business.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

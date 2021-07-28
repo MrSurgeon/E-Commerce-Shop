@@ -82,3 +82,5 @@ C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\bin\Debug
 C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\bin\Debug\netcoreapp3.1\E-Commerce-Shop.Entity.dll
 C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\bin\Debug\netcoreapp3.1\E-Commerce-Shop.DataAccess.pdb
 C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\bin\Debug\netcoreapp3.1\E-Commerce-Shop.Entity.pdb
+C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\bin\Debug\netcoreapp3.1\E-Commerce-Shop.Business.dll
+C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\bin\Debug\netcoreapp3.1\E-Commerce-Shop.Business.pdb

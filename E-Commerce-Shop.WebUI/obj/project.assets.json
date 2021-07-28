@@ -540,6 +540,20 @@
           }
         }
       },
+      "E-Commerce-Shop.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "E-Commerce-Shop.DataAccess": "1.0.0",
+          "E-Commerce-Shop.Entity": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/E-Commerce-Shop.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/E-Commerce-Shop.Business.dll": {}
+        }
+      },
       "E-Commerce-Shop.DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1646,6 +1660,11 @@
         "version.txt"
       ]
     },
+    "E-Commerce-Shop.Business/1.0.0": {
+      "type": "project",
+      "path": "../E-Commerce-Shop.Business/E-Commerce-Shop.Business.csproj",
+      "msbuildProject": "../E-Commerce-Shop.Business/E-Commerce-Shop.Business.csproj"
+    },
     "E-Commerce-Shop.DataAccess/1.0.0": {
       "type": "project",
       "path": "../E-Commerce-Shop.DataAccess/E-Commerce-Shop.DataAccess.csproj",
@@ -1659,6 +1678,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "E-Commerce-Shop.Business >= 1.0.0",
       "E-Commerce-Shop.DataAccess >= 1.0.0",
       "E-Commerce-Shop.Entity >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.17",
@@ -1689,6 +1709,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
+            "C:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Business\\E-Commerce-Shop.Business.csproj": {
+              "projectPath": "C:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Business\\E-Commerce-Shop.Business.csproj"
+            },
             "C:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.DataAccess\\E-Commerce-Shop.DataAccess.csproj": {
               "projectPath": "C:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.DataAccess\\E-Commerce-Shop.DataAccess.csproj"
             },

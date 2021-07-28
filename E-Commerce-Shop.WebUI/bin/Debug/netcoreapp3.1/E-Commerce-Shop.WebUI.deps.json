@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v3.1": {
       "E-Commerce-Shop.WebUI/1.0.0": {
         "dependencies": {
+          "E-Commerce-Shop.Business": "1.0.0",
           "E-Commerce-Shop.DataAccess": "1.0.0",
           "E-Commerce-Shop.Entity": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "3.1.17",
@@ -750,6 +751,18 @@
       "System.Windows.Extensions/4.7.0": {
         "dependencies": {
           "System.Drawing.Common": "4.7.0"
+        }
+      },
+      "E-Commerce-Shop.Business/1.0.0": {
+        "dependencies": {
+          "E-Commerce-Shop.DataAccess": "1.0.0",
+          "E-Commerce-Shop.Entity": "1.0.0"
+        },
+        "runtime": {
+          "E-Commerce-Shop.Business.dll": {}
+        },
+        "compile": {
+          "E-Commerce-Shop.Business.dll": {}
         }
       },
       "E-Commerce-Shop.DataAccess/1.0.0": {
@@ -2687,6 +2700,11 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "E-Commerce-Shop.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "E-Commerce-Shop.DataAccess/1.0.0": {
       "type": "project",

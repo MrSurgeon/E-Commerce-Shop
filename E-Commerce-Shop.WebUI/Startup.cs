@@ -1,6 +1,9 @@
 using System.IO;
+using E_Commerce_Shop.Business.Abstract;
+using E_Commerce_Shop.Business.Concrete;
 using E_Commerce_Shop.DataAccess.Abstract;
 using E_Commerce_Shop.DataAccess.Concrete.EfCore;
+using E_Commerce_Shop.DataAccess.DataSeed;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,6 +18,7 @@ namespace E_Commerce_Shop.WebUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IProductRepository, EfCoreProductRepository>();
+            services.AddScoped<IProductService, ProductManager>();
             services.AddControllersWithViews();
         }
 
@@ -29,6 +33,7 @@ namespace E_Commerce_Shop.WebUI
             });
             if (env.IsDevelopment())
             {
+                SeedDatabase.Seed();
                 app.UseDeveloperExceptionPage();
             }
 

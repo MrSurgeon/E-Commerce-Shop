@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\E-Commerce-Shop.Entity\E-Commerce-Shop.Entity.csproj" />
+    <ProjectReference Include="..\E-Commerce-Shop.DataAccess\E-Commerce-Shop.DataAccess.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>E_Commerce_Shop.Business</RootNamespace>
+  </PropertyGroup>
+
+</Project>
