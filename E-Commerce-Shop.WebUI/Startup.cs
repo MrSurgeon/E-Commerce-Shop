@@ -1,4 +1,6 @@
 using System.IO;
+using E_Commerce_Shop.DataAccess.Abstract;
+using E_Commerce_Shop.DataAccess.Concrete.EfCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,7 +14,7 @@ namespace E_Commerce_Shop.WebUI
 
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddScoped<IProductRepository, EfCoreProductRepository>();
             services.AddControllersWithViews();
         }
 

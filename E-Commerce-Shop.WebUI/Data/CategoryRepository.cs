@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using E_Commerce_Shop.WebUI.Models;
+using E_Commerce_Shop.Entity;
 
 namespace E_Commerce_Shop.WebUI.Data
 {
@@ -10,10 +10,10 @@ namespace E_Commerce_Shop.WebUI.Data
         {
             _categories = new List<Category>()
                 {
-                    new Category(){CategoryId=1, Name = "Telefonlar",Description="Telefon Kategorisi" },
-                    new Category(){CategoryId=2,Name = "Bilgisayarlar",Description="Bilgisayar Kategorisi" },
-                    new Category(){CategoryId=3,Name = "Elektronik",Description="Elektronik Kategorisi" },
-                    new Category(){CategoryId=4,Name = "Beyaz Eşya",Description="Beyaz Eşya Kategorisi" },
+                    new Category(){CategoryId=1, Name = "Telefonlar"},
+                    new Category(){CategoryId=2,Name = "Bilgisayarlar"},
+                    new Category(){CategoryId=3,Name = "Elektronik"},
+                    new Category(){CategoryId=4,Name = "Beyaz Eşya"},
 
                  };
         }

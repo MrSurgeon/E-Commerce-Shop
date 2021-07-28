@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using E_Commerce_Shop.WebUI.Models;
+using E_Commerce_Shop.Entity;
 
 namespace E_Commerce_Shop.WebUI.ViewModels
 {

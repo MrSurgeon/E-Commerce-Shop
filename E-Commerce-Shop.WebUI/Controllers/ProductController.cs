@@ -1,15 +1,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using E_Commerce_Shop.WebUI.Data;
-using E_Commerce_Shop.WebUI.Models;
+using E_Commerce_Shop.Entity;
 using E_Commerce_Shop.WebUI.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using E_Commerce_Shop.DataAccess.Abstract;
 
 namespace E_Commerce_Shop.WebUI.Controllers
 {
     public class ProductController : Controller
     {
+        private readonly IProductRepository _productRepository;
+
+        public ProductController(IProductRepository productRepository)
+        {
+            _productRepository = productRepository;
+        }
         public IActionResult Index()
         {
             return View();
@@ -20,19 +27,14 @@ namespace E_Commerce_Shop.WebUI.Controllers
         {
             var productViewModel = new ProductViewModel()
             {
-                Products = id != null ? q != null ?
-                ProductRepository.Products.Where(w => w.Name.ToLower().Contains(q.ToLower()) || w.Description.ToLower().Contains(q.ToLower())).ToList()
-                : ProductRepository.Products.Where(w => w.CategoryId == id).ToList() : ProductRepository.Products
+                Products = _productRepository.GetAll()
             };
             return View(productViewModel);
         }
-        public IActionResult Details(int? id)
+        public IActionResult Details(int id)
         {
-            if (id == null)
-            {
-                return RedirectToAction("List");
-            }
-            var p = ProductRepository.GetProductById((int)id);
+
+            var p = _productRepository.GetById(id);
             return View(p);
         }
         [HttpGet]
@@ -46,7 +48,7 @@ namespace E_Commerce_Shop.WebUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                ProductRepository.AddProduct(product);
+                _productRepository.Create(product);
                 return RedirectToAction("List");
             }
             ViewBag.Categories = new SelectList(CategoryRepository.Categories, "CategoryId", "Name");
@@ -57,22 +59,19 @@ namespace E_Commerce_Shop.WebUI.Controllers
         public IActionResult Edit(int id)
         {
             ViewBag.Categories = new SelectList(CategoryRepository.Categories, "CategoryId", "Name");
-            return View(ProductRepository.GetProductById(id));
+            return View(_productRepository.GetById(id));
         }
         [HttpPost]
         public IActionResult Edit(Product product)
         {
 
-            ProductRepository.AddProduct(product);
+            _productRepository.Update(product);
             return RedirectToAction("List");
         }
         public IActionResult Delete(int productId)
         {
-            ProductRepository.DeleteProduct(productId);
+            _productRepository.Delete(_productRepository.GetById(productId));
             return RedirectToAction("List");
         }
-
-
-
     }
 }

@@ -1,0 +1,9 @@
+C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\bin\Debug\netstandard2.0\E-Commerce-Shop.Entity.deps.json
+C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\bin\Debug\netstandard2.0\E-Commerce-Shop.Entity.dll
+C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\bin\Debug\netstandard2.0\E-Commerce-Shop.Entity.pdb
+C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.csprojAssemblyReference.cache
+C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.AssemblyInfo.cs
+C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.dll
+C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.pdb

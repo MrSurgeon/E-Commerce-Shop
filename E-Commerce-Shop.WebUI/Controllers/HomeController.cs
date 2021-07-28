@@ -2,8 +2,8 @@
 
 using System;
 using System.Collections.Generic;
+using E_Commerce_Shop.DataAccess.Abstract;
 using E_Commerce_Shop.WebUI.Data;
-using E_Commerce_Shop.WebUI.Models;
 using E_Commerce_Shop.WebUI.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,12 +11,17 @@ namespace E_Commerce_Shop.WebUI.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IProductRepository _productRepository;
+
+        public HomeController(IProductRepository productRepository)
+        {
+            _productRepository = productRepository;
+        }
         public IActionResult Index()
         {
-
             var productViewModel = new ProductViewModel()
             {
-                Products = ProductRepository.Products
+                Products = _productRepository.GetAll()
             };
             return View(productViewModel);
         }

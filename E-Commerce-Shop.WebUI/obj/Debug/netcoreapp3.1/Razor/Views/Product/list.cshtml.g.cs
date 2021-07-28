@@ -14,7 +14,7 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\Views\_ViewImports.cshtml"
-using E_Commerce_Shop.WebUI.Models;
+using E_Commerce_Shop.Entity;
 
 #line default
 #line hidden
@@ -27,7 +27,7 @@ using E_Commerce_Shop.WebUI.ViewModels;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5ae6321887bf78c34d0b97b1baaab161997dec19", @"/Views/Product/list.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"378e19ae4a0c3aab7bb282b0efac0eb2875e9358", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4bdff6f63a64d5920e034a4053c2b7377de08e50", @"/Views/_ViewImports.cshtml")]
     public class Views_Product_list : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ProductViewModel>
     {
         #pragma warning disable 1998

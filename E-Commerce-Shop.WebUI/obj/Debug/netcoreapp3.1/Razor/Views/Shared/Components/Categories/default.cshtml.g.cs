@@ -14,7 +14,7 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\Views\_ViewImports.cshtml"
-using E_Commerce_Shop.WebUI.Models;
+using E_Commerce_Shop.Entity;
 
 #line default
 #line hidden
@@ -27,7 +27,7 @@ using E_Commerce_Shop.WebUI.ViewModels;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"83c97975cea35d4ed0023b0740de6dba88fb256c", @"/Views/Shared/Components/Categories/default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"378e19ae4a0c3aab7bb282b0efac0eb2875e9358", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4bdff6f63a64d5920e034a4053c2b7377de08e50", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_Categories_default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Category>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Product", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -59,7 +59,7 @@ using E_Commerce_Shop.WebUI.ViewModels;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<div class=\"list-group\">\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83c97975cea35d4ed0023b0740de6dba88fb256c4592", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83c97975cea35d4ed0023b0740de6dba88fb256c4586", async() => {
                 WriteLiteral("Tümü");
             }
             );
@@ -93,7 +93,7 @@ using E_Commerce_Shop.WebUI.ViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83c97975cea35d4ed0023b0740de6dba88fb256c6833", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83c97975cea35d4ed0023b0740de6dba88fb256c6827", async() => {
 #nullable restore
 #line 9 "C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\Views\Shared\Components\Categories\default.cshtml"
                                                                                 Write(category.Name);
