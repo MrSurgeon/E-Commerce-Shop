@@ -39,16 +39,40 @@ namespace E_Commerce_Shop.Business.Concrete
             _productRepository.Delete(_productRepository.GetById(id));
         }
 
-        public List<Product> GetProductsByCategoryUrl(string name)
+        public List<Product> GetProductsByCategoryUrl(string url, int page, int pageSize)
         {
             //İş Kurallarını Oluştur
-            return _productRepository.GetProductsByCategoryUrl(name);
+            if (page <= 0)
+            {
+                page = 1;
+            }
+            if (pageSize <= 0)
+            {
+                pageSize = 3;
+            }
+            return _productRepository.GetProductsByCategoryUrl(url, page, pageSize);
         }
 
-        public Product GetProductWithCategories(int id)
+        public Product GetProductWithCategories(string url)
         {
             //İş Kurallarını Oluştur
-            return _productRepository.GetProductWithCategories(id);
+            return _productRepository.GetProductWithCategories(url);
+        }
+
+        public int GetCountByCategory(string name)
+        {
+            return _productRepository.GetCountByCategory(name);
+        }
+
+        public List<Product> GetHomePageProducts()
+        {
+            //İş Kuralları
+            return _productRepository.GetHomePageProducts();
+        }
+
+        public List<Product> GetSearchResult(string searchValue)
+        {
+            return _productRepository.GetSearchResult(searchValue);
         }
     }
 }

@@ -16,11 +16,12 @@ namespace E_Commerce_Shop.DataAccess.DataSeed
                     if (context.Categories.Count() == 0)
                     {
                         context.Categories.AddRange(Categories);
-                        context.AddRange(ProductsCategories);
+
                     }
                     if (context.Products.Count() == 0)
                     {
                         context.Products.AddRange(Products);
+                        context.AddRange(ProductsCategories);
                     }
                 }
                 context.SaveChanges();
@@ -34,12 +35,12 @@ namespace E_Commerce_Shop.DataAccess.DataSeed
         };
         private static Product[] Products =
         {
-            new Product(){Name="Samsung S4",Price=2000,Description="İyi Telefon",ImageUrl="1.jfif",IsApproved=true},
-            new Product(){Name="Samsung S5",Price=3000,Description="İyi Telefon",ImageUrl="2.jfif",IsApproved=true},
-            new Product(){Name="Samsung S6",Price=4000,Description="İyi Telefon",ImageUrl="3.jfif",IsApproved=false},
-            new Product(){Name="Samsung S7",Price=5000,Description="İyi Telefon",ImageUrl="4.jfif",IsApproved=false},
-            new Product(){Name="Samsung S8",Price=6000,Description="İyi Telefon",ImageUrl="5.jfif",IsApproved=true},
-            new Product(){Name="Samsung S9",Price=7000,Description="İyi Telefon",ImageUrl="6.jfif",IsApproved=true},
+            new Product(){Name="Samsung S4",Url="samsung-s4",Price=2000,Description="İyi Telefon",ImageUrl="1.jfif",IsApproved=true},
+            new Product(){Name="Samsung S5",Url="samsung-s5",Price=3000,Description="İyi Telefon",ImageUrl="2.jfif",IsApproved=true},
+            new Product(){Name="Samsung S6",Url="samsung-s6",Price=4000,Description="İyi Telefon",ImageUrl="3.jfif",IsApproved=false},
+            new Product(){Name="Samsung S7",Url="samsung-s7",Price=5000,Description="İyi Telefon",ImageUrl="4.jfif",IsApproved=false},
+            new Product(){Name="Samsung S8",Url="samsung-s8",Price=6000,Description="İyi Telefon",ImageUrl="5.jfif",IsApproved=true},
+            new Product(){Name="Samsung S9",Url="samsung-s9",Price=7000,Description="İyi Telefon",ImageUrl="6.jfif",IsApproved=true},
 
         };
         private static ProductCategory[] ProductsCategories =

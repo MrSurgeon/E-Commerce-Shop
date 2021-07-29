@@ -1,5 +1,5 @@
 using E_Commerce_Shop.Business.Abstract;
-
+using E_Commerce_Shop.WebUI.Helpers;
 using E_Commerce_Shop.WebUI.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,24 +13,42 @@ namespace E_Commerce_Shop.WebUI.Controllers
         {
             _productService = productService;
         }
-
-        public IActionResult List(string category)
+        // products/telefon?page=1
+        //products?page=1
+        public IActionResult List(string category, int page = 1)
         {
+            const int pageSize = 2;
             var productListViewModel = new ProductListViewModel()
             {
-                Products = _productService.GetProductsByCategoryUrl(category)
+                Products = _productService.GetProductsByCategoryUrl(category, page, pageSize),
+                PageInfo = new PageInfo()
+                {
+                    TotalItems = _productService.GetCountByCategory(category),
+                    CurrentCategory = category,
+                    CurrentPage = page,
+                    ItemsPerPage = pageSize
+                }
             };
             return View(productListViewModel);
         }
 
-        public IActionResult Details(int? id)
+        public IActionResult Details(string productUrl)
         {
-            if (id != null)
+            if (productUrl != null)
             {
-                var product = _productService.GetProductWithCategories((int)id);
+                var product = _productService.GetProductWithCategories(productUrl);
                 if (product != null) return View(product);
             }
             return NotFound();
+        }
+
+        public IActionResult Search(string q)
+        {
+            var searchViewModel = new SearchViewModel()
+            {
+                Products = _productService.GetSearchResult(q)
+            };
+            return View(searchViewModel);
         }
     }
 }

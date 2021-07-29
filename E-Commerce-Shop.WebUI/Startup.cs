@@ -43,6 +43,26 @@ namespace E_Commerce_Shop.WebUI
 
             app.UseEndpoints(endpoints =>
             {
+                //localhost/search
+                endpoints.MapControllerRoute(
+                    name: "search",
+                    pattern: "search",
+                     defaults: new
+                     {
+                         controller = "Shop",
+                         action = "Search"
+                     }
+                );
+                //localhost/productUrl=samsung-s5
+                endpoints.MapControllerRoute(
+                    name: "productdetails",
+                    pattern: "{productUrl}",
+                    defaults: new
+                    {
+                        controller = "Shop",
+                        action = "Details"
+                    }
+                );
                 //products => Shop/List
                 //products/Elektronik => Shop/List/Elektronik Category Name
                 endpoints.MapControllerRoute(

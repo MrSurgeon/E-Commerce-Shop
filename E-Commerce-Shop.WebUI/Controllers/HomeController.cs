@@ -16,7 +16,7 @@ namespace E_Commerce_Shop.WebUI.Controllers
         {
             var productViewModel = new ProductListViewModel()
             {
-                Products = _productRepository.GetAll()
+                Products = _productRepository.GetHomePageProducts()
             };
             return View(productViewModel);
         }

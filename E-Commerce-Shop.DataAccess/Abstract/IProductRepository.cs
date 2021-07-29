@@ -5,7 +5,11 @@ namespace E_Commerce_Shop.DataAccess.Abstract
 {
     public interface IProductRepository : IRepository<Product>
     {
-        Product GetProductWithCategories(int id);
-        List<Product> GetProductsByCategoryUrl(string name);
+        Product GetProductWithCategories(string url);
+
+        List<Product> GetSearchResult(string searchValue);
+        List<Product> GetProductsByCategoryUrl(string url, int page, int pageSize);
+        int GetCountByCategory(string name);
+        List<Product> GetHomePageProducts();
     }
 }

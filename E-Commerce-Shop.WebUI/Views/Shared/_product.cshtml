@@ -10,8 +10,7 @@
         </small>
     </div>
     <div class="card-footer text-center">
-        <a asp-controller="Shop" asp-action="Details" asp-route-id="@Model.ProductId"
-            class="btn btn-primary btn-sm">İncele</a>
+        <a href="/@Model.Url" class="btn btn-primary btn-sm">İncele</a>
         <a asp-controller="Shop" asp-action="AddToCard" asp-route-id="@Model.ProductId"
             class="btn btn-primary btn-sm">Add To Card</a>
     </div>

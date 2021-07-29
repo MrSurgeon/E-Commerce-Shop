@@ -1,4 +1,4 @@
-@model ProductListViewModel
+@model SearchViewModel
 @{
     var products = @Model.Products;
 }
@@ -16,30 +16,6 @@
                 </div>
             }
         </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-                @if (Model.PageInfo.CurrentCategory != null)
-                {
-                    @for (int i = 1; i <= Model.PageInfo.TotalPages(); i++)
-                    {
-                        <li class="page-item"><a class="page-link"
-                        href="/products/@(Model.PageInfo.CurrentCategory)?page=@i">@i</a></li>
-                    }
-                }
-                else
-                {
-                    @for (int i = 1; i <= Model.PageInfo.TotalPages(); i++)
-                    {
-
-                        <li class="page-item"><a class="page-link" href="/products?page=@i">@i</a></li>
-                    }
-                }
-            </ul>
-        </nav>
     </div>
 </div>
 @section Scripts{

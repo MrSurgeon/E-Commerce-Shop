@@ -4,7 +4,7 @@
             <a class="navbar-brand" href="/">E-Commerce-Shop</a>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" asp-controller="Shop" asp-action="List">Products</a>
+                    <a class="nav-link" href="/products">Products</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Card</a>
@@ -20,9 +20,5 @@
                 </li>
             </ul>
         </div>
-        <form asp-controller="product" asp-action="list" method="GET" class="form-inline">
-            <input name="q" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-        </form>
     </div>
 </nav>
