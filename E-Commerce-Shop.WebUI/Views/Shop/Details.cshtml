@@ -1,0 +1,33 @@
+@model Product
+
+<div class="row no-gutters">
+    <div class="col-md-4">
+        <img src="/images/@Model.ImageUrl" alt="..." class="img-fluid">
+    </div>
+    <div class="col-md-8">
+        <div class="card-body">
+            <h1 class="card-title">@Model.Name</h1>
+            <hr>
+            @foreach (var item in Model.ProductCategories)
+            {
+                <a asp-controller="shop" asp-action="List" asp-route-category="@item.Category.Url"
+                class="btn btn-link btn-sm p-0 mb-3">@item.Category.Name</a>
+            }
+            <div class="mb-3">
+                <p class="text-primary mb-3"><i class="fas fa-lira-sign"></i>@Model.Price</p>
+            </div>
+            <button class="btn btn-primary btn-lg" type="submit">Add To Card</button>
+        </div>
+    </div>
+</div>
+<div class="row no-gutters mb-2">
+    <div class="col-md-12">
+        <p class="card-text">@Model.Description</p>
+    </div>
+</div>
+
+
+@section Scripts{
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+}

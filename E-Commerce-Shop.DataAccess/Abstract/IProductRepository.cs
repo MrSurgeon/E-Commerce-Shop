@@ -5,5 +5,7 @@ namespace E_Commerce_Shop.DataAccess.Abstract
 {
     public interface IProductRepository : IRepository<Product>
     {
+        Product GetProductWithCategories(int id);
+        List<Product> GetProductsByCategoryUrl(string name);
     }
 }

@@ -21,9 +21,9 @@ namespace E_Commerce_Shop.WebUI.ViewComponents
             {
                 Categories = _categoryService.GetAll()
             };
-            if (RouteData.Values["action"].ToString() == "index")
+            if (RouteData.Values["category"] != null)
             {
-                ViewBag.SelectedCategory = RouteData.Values["id"];
+                ViewBag.SelectedCategory = RouteData.Values["category"];
             }
             return View(categoryViewModel);
         }

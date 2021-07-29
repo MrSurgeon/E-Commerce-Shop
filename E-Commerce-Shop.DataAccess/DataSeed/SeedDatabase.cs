@@ -15,34 +15,46 @@ namespace E_Commerce_Shop.DataAccess.DataSeed
                 {
                     if (context.Categories.Count() == 0)
                     {
-                        context.Categories.AddRange(Categories());
+                        context.Categories.AddRange(Categories);
+                        context.AddRange(ProductsCategories);
                     }
                     if (context.Products.Count() == 0)
                     {
-                        context.Products.AddRange(Products());
+                        context.Products.AddRange(Products);
                     }
                 }
                 context.SaveChanges();
             }
         }
-        private static Category[] Categories()
+        private static Category[] Categories =
         {
-            return new Category[]{
-                new Category(){Name="Akıllı Telefon"},
-                new Category(){Name="Elektronik Eşya"},
-                new Category(){Name="Bilgisayar"},
-            };
-        }
-        private static Product[] Products()
+            new Category(){Name="Akıllı Telefon",Url="telefon"},
+            new Category(){Name="Elektronik",Url="elektronik"},
+            new Category(){Name="Bilgisayar",Url="bilgisayar"},
+        };
+        private static Product[] Products =
         {
-            return new Product[]{
-                new Product(){Name="Samsung S4",Price=2000,Description="İyi Telefon",ImageUrl="1.jfif",IsApproved=true},
-                new Product(){Name="Samsung S5",Price=3000,Description="İyi Telefon",ImageUrl="2.jfif",IsApproved=true},
-                new Product(){Name="Samsung S6",Price=4000,Description="İyi Telefon",ImageUrl="3.jfif",IsApproved=false},
-                new Product(){Name="Samsung S7",Price=5000,Description="İyi Telefon",ImageUrl="4.jfif",IsApproved=false},
-                new Product(){Name="Samsung S8",Price=6000,Description="İyi Telefon",ImageUrl="5.jfif",IsApproved=true},
-                new Product(){Name="Samsung S9",Price=7000,Description="İyi Telefon",ImageUrl="6.jfif",IsApproved=true},
-            };
-        }
+            new Product(){Name="Samsung S4",Price=2000,Description="İyi Telefon",ImageUrl="1.jfif",IsApproved=true},
+            new Product(){Name="Samsung S5",Price=3000,Description="İyi Telefon",ImageUrl="2.jfif",IsApproved=true},
+            new Product(){Name="Samsung S6",Price=4000,Description="İyi Telefon",ImageUrl="3.jfif",IsApproved=false},
+            new Product(){Name="Samsung S7",Price=5000,Description="İyi Telefon",ImageUrl="4.jfif",IsApproved=false},
+            new Product(){Name="Samsung S8",Price=6000,Description="İyi Telefon",ImageUrl="5.jfif",IsApproved=true},
+            new Product(){Name="Samsung S9",Price=7000,Description="İyi Telefon",ImageUrl="6.jfif",IsApproved=true},
+
+        };
+        private static ProductCategory[] ProductsCategories =
+        {
+            new ProductCategory() { Product = Products[0],Category = Categories[0]},
+            new ProductCategory() { Product = Products[0],Category = Categories[1]},
+            new ProductCategory() { Product = Products[1],Category = Categories[0]},
+            new ProductCategory() { Product = Products[1],Category = Categories[1]},
+            new ProductCategory() { Product = Products[2],Category = Categories[0]},
+            new ProductCategory() { Product = Products[2],Category = Categories[1]},
+            new ProductCategory() { Product = Products[3],Category = Categories[0]},
+            new ProductCategory() { Product = Products[3],Category = Categories[2]},
+            new ProductCategory() { Product = Products[4],Category = Categories[0]},
+            new ProductCategory() { Product = Products[5],Category = Categories[0]},
+
+        };
     }
 }

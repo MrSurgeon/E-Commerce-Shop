@@ -38,5 +38,17 @@ namespace E_Commerce_Shop.Business.Concrete
             //İş Kurallarını Oluştur
             _productRepository.Delete(_productRepository.GetById(id));
         }
+
+        public List<Product> GetProductsByCategoryUrl(string name)
+        {
+            //İş Kurallarını Oluştur
+            return _productRepository.GetProductsByCategoryUrl(name);
+        }
+
+        public Product GetProductWithCategories(int id)
+        {
+            //İş Kurallarını Oluştur
+            return _productRepository.GetProductWithCategories(id);
+        }
     }
 }

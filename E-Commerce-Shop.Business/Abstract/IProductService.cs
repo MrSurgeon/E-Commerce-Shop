@@ -10,5 +10,7 @@ namespace E_Commerce_Shop.Business.Abstract
         void Create(Product entity);
         void Update(Product entity);
         void Delete(int id);
+        Product GetProductWithCategories(int id);
+        List<Product> GetProductsByCategoryUrl(string name);
     }
 }

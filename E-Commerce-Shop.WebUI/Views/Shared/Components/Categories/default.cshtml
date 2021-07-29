@@ -1,9 +1,9 @@
 @model CategoryViewModel
 <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action">Tümü</a>
+    <a href="/products" class="list-group-item list-group-item-action">Tümü</a>
     @foreach (var category in Model.Categories)
     {
-        <a asp-controller="Product" asp-action="List" asp-route-id="@category.CategoryId" class="list-group-item
+        <a asp-controller="Shop" asp-action="List" asp-route-category="@category.Url" class="list-group-item
         list-group-item-action
         @((ViewBag.SelectedCategory==category.CategoryId.ToString())?" active":"")">@category.Name</a>
     }

@@ -43,6 +43,18 @@ namespace E_Commerce_Shop.WebUI
 
             app.UseEndpoints(endpoints =>
             {
+                //products => Shop/List
+                //products/Elektronik => Shop/List/Elektronik Category Name
+                endpoints.MapControllerRoute(
+                    name: "products",
+                    pattern: "products/{category?}",
+                    defaults: new
+                    {
+                        controller = "Shop",
+                        action = "List"
+                    }
+                );
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}"
