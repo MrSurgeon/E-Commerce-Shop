@@ -1,0 +1,74 @@
+@model ProductListViewModel
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>
+            Admin Product List
+        </h2>
+        <hr>
+        @if (Model.Products.Count > 0)
+        {
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Ana Sayfa</th>
+                        <th scope="col">Onaylı</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Products)
+                    {
+                        <tr>
+                            <td>@item.ProductId</td>
+                            <td><img src="/images/@item.ImageUrl" width="100px"></td>
+                            <td>@item.Name</td>
+                            <td>@item.Price</td>
+                            <td>
+                                @if (@item.IsHome)
+                                {
+                                    <i class="fas fa-check-circle"></i>
+                                }
+                                else
+                                {
+                                    <i class="fas fa-times-circle"></i>
+                                }
+
+                            </td>
+                            <td>
+                                @if (@item.IsApproved)
+                                {
+                                    <i class="fas fa-check-circle"></i>
+                                }
+                                else
+                                {
+                                    <i class="fas fa-times-circle"></i>
+                                }
+                            </td>
+                            <td>
+                                <a href="/admin/products/@item.ProductId" class="btn btn-primary btn-sm">Edit</a>
+                                <form action="/Admin/DeleteProduct" method="POST" style="display: inline;">
+                                    <input type="hidden" name="productId" value="@item.ProductId">
+                                    <button type="submit" class="btn btn-primary btn-sm">Delete</button>
+                                </form>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div>
+                <div class="alert alert-warning">
+                    <h3>No Products</h3>
+                </div>
+            </div>
+        }
+    </div>
+</div>

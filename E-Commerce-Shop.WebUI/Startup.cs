@@ -43,6 +43,46 @@ namespace E_Commerce_Shop.WebUI
 
             app.UseEndpoints(endpoints =>
             {
+                //admin/categories
+                endpoints.MapControllerRoute(
+                  name: "admincategorylist",
+                  pattern: "admin/categories",
+                   defaults: new
+                   {
+                       controller = "Admin",
+                       action = "CategoryList"
+                   }
+              );
+                //admin/categories/1 => admin/EditCategory/1
+                endpoints.MapControllerRoute(
+                  name: "admincategorylist",
+                  pattern: "admin/categories/{categoryId?}",
+                   defaults: new
+                   {
+                       controller = "Admin",
+                       action = "EditCategory"
+                   }
+              );
+                //admin/products
+                endpoints.MapControllerRoute(
+                   name: "adminproductlist",
+                   pattern: "admin/products",
+                    defaults: new
+                    {
+                        controller = "Admin",
+                        action = "ProductList"
+                    }
+               );
+                //admin/products/1 => Admin/Edit/1
+                endpoints.MapControllerRoute(
+                    name: "adminedit",
+                    pattern: "admin/products/{id?}",
+                     defaults: new
+                     {
+                         controller = "Admin",
+                         action = "EditProduct"
+                     }
+                );
                 //localhost/search
                 endpoints.MapControllerRoute(
                     name: "search",

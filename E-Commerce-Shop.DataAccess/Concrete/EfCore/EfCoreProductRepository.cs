@@ -69,6 +69,17 @@ namespace E_Commerce_Shop.DataAccess.Concrete.EfCore
             }
         }
 
+        public Product GetProductWithCategoriesByProductId(int productId)
+        {
+            using (var context = new ShopContext())
+            {
+                return context.Products
+                                .Include(p => p.ProductCategories)
+                                .ThenInclude(pc => pc.Category)
+                                .FirstOrDefault(p => p.ProductId == productId);
+            }
+        }
+
         public List<Product> GetSearchResult(string searchValue)
         {
             using (var context = new ShopContext())
@@ -81,6 +92,32 @@ namespace E_Commerce_Shop.DataAccess.Concrete.EfCore
                    .AsQueryable();
 
                 return products.ToList();
+            }
+        }
+
+        public void Update(Product product, int[] categoryIds)
+        {
+            using (var context = new ShopContext())
+            {
+                var result = context.Products
+                                    .Include(c => c.ProductCategories)
+                                    .FirstOrDefault(w => w.ProductId == product.ProductId);
+                if (result != null)
+                {
+                    result.Name = product.Name;
+                    result.Price = product.Price;
+                    result.Url = product.Url;
+                    result.Description = product.Description;
+                    result.ImageUrl = product.ImageUrl;
+                    result.IsApproved = product.IsApproved;
+                    result.IsHome = product.IsHome;
+                    result.ProductCategories = categoryIds.Select(cakid => new ProductCategory()
+                    {
+                        ProductId = result.ProductId,
+                        CategoryId = cakid
+                    }).ToList();
+                }
+                context.SaveChanges();
             }
         }
     }

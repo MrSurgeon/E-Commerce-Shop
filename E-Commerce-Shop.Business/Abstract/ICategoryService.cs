@@ -3,12 +3,14 @@ using E_Commerce_Shop.Entity;
 
 namespace E_Commerce_Shop.Business.Abstract
 {
-    public interface ICategoryService
+    public interface ICategoryService : IValidator<Category>
     {
         Category GetById(int id);
         List<Category> GetAll();
         void Create(Category entity);
         void Update(Category entity);
-        void Delete(int id);
+        void Delete(Category entity);
+        Category GetByIdWithProducts(int id);
+        void DeleteProductFromCategory(int productId, int categoryId);
     }
 }

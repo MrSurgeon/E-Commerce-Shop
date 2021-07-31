@@ -1,0 +1,93 @@
+@model AdminProductEditViewModel
+
+<h1 class="h3">Edit Product</h1>
+<hr>
+<form asp-controller="Admin" asp-action="EditProduct" method="POST" class="pt-2 mt-2">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-8">
+            <input type="hidden" asp-for="ProductId">
+            <div class="form-group row">
+                <label asp-for="Name" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input asp-for="Name" class="form-control mb-1">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Url" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input asp-for="Url" class="form-control mb-1">
+                    <span asp-validation-for="Url" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Description" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <textarea asp-for="Description" class="form-control mb-1"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Price" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input asp-for="Price" class="form-control mb-1">
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="ImageUrl" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input asp-for="ImageUrl" class="form-control mb-1">
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-10 offset-sm-2">
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            @for (int i = 0; i < Model.SelectedCategories.Count; i++)
+            {
+                <input type="hidden" name="SelectedCategories[@i].CategoryId"
+                value="@Model.SelectedCategories[i].CategoryId">
+                <input type="hidden" name="SelectedCategories[@i].Name" value="@Model.SelectedCategories[i].Name">
+            }
+            @for (int i = 0; i < Model.AllCategories.Count; i++)
+            {
+                <input type="hidden" name="AllCategories[@i].CategoryId" value="@Model.AllCategories[i].CategoryId">
+                <input type="hidden" name="AllCategories[@i].Name" value="@Model.AllCategories[i].Name">
+            }
+
+            @foreach (var item in Model.AllCategories)
+            {
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" value="@item.CategoryId"
+                    @(Model.SelectedCategories.Any(c=>c.CategoryId==item.CategoryId)?"checked":"") id="@item.Name"
+                    name="categoryIds">
+                    <label class="custom-control-label" for="@item.Name">@item.Name</label>
+                </div>
+            }
+            <div class="mt-3">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" asp-for="IsApproved" class="custom-control-input">
+                    <label class="custom-control-label" asp-for="IsApproved"></label>
+                </div>
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" asp-for="IsHome" class="custom-control-input">
+                    <label class="custom-control-label" asp-for="IsHome"></label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+<script src="/modules/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+}

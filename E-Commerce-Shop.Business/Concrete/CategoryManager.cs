@@ -14,16 +14,23 @@ namespace E_Commerce_Shop.Business.Concrete
             _categoryRepository = categoryRepository;
         }
 
+        public string ErrorMessage { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
         public void Create(Category entity)
         {
             //İş Kuralları
             _categoryRepository.Create(entity);
         }
 
-        public void Delete(int id)
+        public void Delete(Category entity)
         {
             //İş Kuralları
-            _categoryRepository.Delete(_categoryRepository.GetById(id));
+            _categoryRepository.Delete(entity);
+        }
+
+        public void DeleteProductFromCategory(int productId, int categoryId)
+        {
+            _categoryRepository.DeleteProductFromCategory(productId, categoryId);
         }
 
         public List<Category> GetAll()
@@ -38,10 +45,20 @@ namespace E_Commerce_Shop.Business.Concrete
             return _categoryRepository.GetById(id);
         }
 
+        public Category GetByIdWithProducts(int id)
+        {
+            return _categoryRepository.GetByIdWithProducts(id);
+        }
+
         public void Update(Category entity)
         {
             //İş Kuralları
             _categoryRepository.Update(entity);
+        }
+
+        public bool IsValidation(Category entity)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

@@ -9,6 +9,7 @@ namespace E_Commerce_Shop.Business.Concrete
     {
         private readonly IProductRepository _productRepository;
 
+
         public ProductManager(IProductRepository productRepository)
         {
             _productRepository = productRepository;
@@ -23,20 +24,30 @@ namespace E_Commerce_Shop.Business.Concrete
             //İş Kurallarını Oluştur
             return _productRepository.GetAll();
         }
-        public void Create(Product entity)
+        public bool Create(Product entity)
         {
-            //İş Kurallarını Oluştur
-            _productRepository.Create(entity);
+            if (IsValidation(entity))
+            {
+                _productRepository.Create(entity);
+                return true;
+            }
+            return false;
         }
-        public void Update(Product entity)
+        public bool Update(Product entity)
         {
-            //İş Kurallarını Oluştur
-            _productRepository.Update(entity);
+            if (IsValidation(entity))
+            {
+
+                _productRepository.Update(entity);
+                return true;
+            }
+            return false;
+
         }
-        public void Delete(int id)
+        public void Delete(Product entity)
         {
             //İş Kurallarını Oluştur
-            _productRepository.Delete(_productRepository.GetById(id));
+            _productRepository.Delete(entity);
         }
 
         public List<Product> GetProductsByCategoryUrl(string url, int page, int pageSize)
@@ -73,6 +84,54 @@ namespace E_Commerce_Shop.Business.Concrete
         public List<Product> GetSearchResult(string searchValue)
         {
             return _productRepository.GetSearchResult(searchValue);
+        }
+
+        public Product GetProductWithCategoriesByProductId(int productId)
+        {
+
+            return _productRepository.GetProductWithCategoriesByProductId(productId);
+        }
+
+        public bool Update(Product product, int[] categoryIds)
+        {
+            if (IsValidation(product))
+            {
+                if (categoryIds.Length == 0)
+                {
+                    ErrorMessage += "En az bir kategori alanı seçmelisiniz!";
+                    return false;
+                }
+                _productRepository.Update(product, categoryIds);
+                return true;
+            }
+            return false;
+        }
+
+        public string ErrorMessage { get; set; }
+        public bool IsValidation(Product entity)
+        {
+            bool isValid = true;
+            if (string.IsNullOrEmpty(entity.Name))
+            {
+                ErrorMessage += "Ürün ismi doldurulmalıdır.";
+                isValid = false;
+            }
+            if (string.IsNullOrEmpty(entity.Url))
+            {
+                ErrorMessage += "Url alanı doldurulmalıdır.";
+                isValid = false;
+            }
+            if (entity.Price == null)
+            {
+                ErrorMessage += "Fiyat alanı boş geçilemez !";
+                isValid = false;
+            }
+            if (entity.Price < 0)
+            {
+                ErrorMessage += "Fiyat alanı 0'dan küçük olamaz !";
+                isValid = false;
+            }
+            return isValid;
         }
     }
 }

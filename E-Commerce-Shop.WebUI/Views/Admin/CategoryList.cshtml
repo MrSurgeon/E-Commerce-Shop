@@ -1,0 +1,47 @@
+@model AdminCategoryViewModel
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>
+            Admin Category List
+        </h2>
+        <hr>
+        @if (Model.Categories.Count > 0)
+        {
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Categories)
+                    {
+                        <tr>
+                            <td>@item.CategoryId</td>
+                            <td>@item.Name</td>
+                            <td>
+                                <a href="/admin/categories/@item.CategoryId" class="btn btn-primary btn-sm">Edit</a>
+                                <form action="/Admin/DeleteCategory" method="POST" style="display: inline;">
+                                    <input type="hidden" name="id" value="@item.CategoryId">
+                                    <button type="submit" class="btn btn-primary btn-sm">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div>
+                <div class="alert alert-warning">
+                    <h3>No Categories</h3>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

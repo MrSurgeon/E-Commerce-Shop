@@ -1,4 +1,4 @@
-using E_Commerce_Shop.DataAccess.Abstract;
+using E_Commerce_Shop.Business.Abstract;
 using E_Commerce_Shop.WebUI.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,17 +6,17 @@ namespace E_Commerce_Shop.WebUI.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IProductRepository _productRepository;
+        private readonly IProductService _productService;
 
-        public HomeController(IProductRepository productRepository)
+        public HomeController(IProductService productService)
         {
-            _productRepository = productRepository;
+            _productService = productService;
         }
         public IActionResult Index()
         {
             var productViewModel = new ProductListViewModel()
             {
-                Products = _productRepository.GetHomePageProducts()
+                Products = _productService.GetHomePageProducts()
             };
             return View(productViewModel);
         }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rMEpTkUFX9vAn1vcUoIfYA91Y9j1Rmv3XG2HXghC87XLedRpCgT39UDcJV7tbehMCPy924KfN1Xbe03rOwc4yA==",
+  "dgSpecHash": "ll2L8GoQeALpZW600iqhR7KK1IiLhGGGorsWT0o+SCgewEkKt5lBnXOl+eRg2nZ1iJRp1gWNpKAfAF6/6RrxrA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\E-Commerce-Shop.WebUI.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\mysql.data\\8.0.26\\mysql.data.8.0.26.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\mysql.entityframeworkcore\\3.1.14\\mysql.entityframeworkcore.3.1.14.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
