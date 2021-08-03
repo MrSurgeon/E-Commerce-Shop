@@ -22,8 +22,6 @@ namespace E_Commerce_Shop.WebUI.ViewModels.Admin
 
         [Required(ErrorMessage = "Description alanı girilmelidir.")]
         public string Description { get; set; }
-
-        [Required(ErrorMessage = "ImageUrl alanı girilmelidir.")]
         public string ImageUrl { get; set; }
         public bool IsApproved { get; set; }
         public bool IsHome { get; set; }

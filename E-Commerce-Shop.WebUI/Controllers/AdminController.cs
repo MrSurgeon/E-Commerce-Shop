@@ -1,11 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using E_Commerce_Shop.Business.Abstract;
 using E_Commerce_Shop.Entity;
 using E_Commerce_Shop.WebUI.Helpers;
 using E_Commerce_Shop.WebUI.ViewModels;
 using E_Commerce_Shop.WebUI.ViewModels.Admin;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -35,7 +38,7 @@ namespace E_Commerce_Shop.WebUI.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateProduct(AdminProductViewModel adminProductViewModel)
+        public async Task<IActionResult> CreateProduct(AdminProductViewModel adminProductViewModel, IFormFile file)
         {
             if (!ModelState.IsValid)
             {
@@ -44,11 +47,17 @@ namespace E_Commerce_Shop.WebUI.Controllers
             var entity = new Product()
             {
                 Name = adminProductViewModel.Name,
-                ImageUrl = adminProductViewModel.ImageUrl,
                 Price = adminProductViewModel.Price,
                 Url = adminProductViewModel.Url,
                 Description = adminProductViewModel.Description
             };
+
+            if (file == null)
+            {
+                _productService.ErrorMessage += "Resim seçilmedi veya yanlış format yüklenmeye çalışıldı !";
+            }
+            entity.ImageUrl = await ImageToDepo(file);
+
             if (_productService.Create(entity))
             {
                 TemplateOfMessage($"{entity.Name} isimli ürün eklendi", "success");
@@ -85,11 +94,10 @@ namespace E_Commerce_Shop.WebUI.Controllers
         }
 
         [HttpPost]
-        public IActionResult EditProduct(AdminProductEditViewModel adminEditViewModel, int[] categoryIds)
+        public async Task<IActionResult> EditProduct(AdminProductEditViewModel adminEditViewModel, int[] categoryIds, IFormFile file)
         {
             if (!ModelState.IsValid)
             {
-
                 return View(adminEditViewModel);
             }
             if (_productService.GetById(adminEditViewModel.ProductId) == null)
@@ -103,7 +111,7 @@ namespace E_Commerce_Shop.WebUI.Controllers
                 Price = adminEditViewModel.Price,
                 Description = adminEditViewModel.Description,
                 Url = adminEditViewModel.Url,
-                ImageUrl = adminEditViewModel.ImageUrl,
+                ImageUrl = (file != null) ? await ImageToDepo(file) : adminEditViewModel.ImageUrl,
                 IsApproved = adminEditViewModel.IsApproved,
                 IsHome = adminEditViewModel.IsHome
             }, categoryIds))
@@ -112,6 +120,7 @@ namespace E_Commerce_Shop.WebUI.Controllers
                 return RedirectToAction("ProductList");
             }
             TemplateOfMessage(_productService.ErrorMessage, "danger");
+            adminEditViewModel.SelectedCategories = new List<Category>();
             return View(adminEditViewModel);
         }
         [HttpPost]
@@ -261,6 +270,18 @@ namespace E_Commerce_Shop.WebUI.Controllers
                 AlertType = alertType
             };
             TempData["Message"] = JsonConvert.SerializeObject(messagePackage);
+        }
+
+        private async Task<string> ImageToDepo(IFormFile file)
+        {
+            var extension = Path.GetExtension(file.FileName);
+            var randomName = string.Format($"{Guid.NewGuid()}{extension}");
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\images", randomName);
+            using (var stream = new FileStream(path, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+            return randomName;
         }
     }
 }

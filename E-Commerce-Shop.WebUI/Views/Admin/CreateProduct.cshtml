@@ -1,10 +1,14 @@
 @model AdminProductViewModel
+@{
+    var ckeditor = "@ckeditor";
+}
 
 <h1 class="h3">Create The Product</h1>
 <hr>
 <div class="row">
     <div class="col-md-8">
-        <form asp-controller="Admin" asp-action="CreateProduct" method="POST" class="pt-2 mt-2">
+        <form asp-controller="Admin" asp-action="CreateProduct" method="POST" class="pt-2 mt-2"
+            enctype="multipart/form-data">
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group row">
                 <label asp-for="Name" class="col-sm-2 col-form-label"></label>
@@ -23,7 +27,7 @@
             <div class="form-group row">
                 <label asp-for="Description" class="col-sm-2 col-form-label"></label>
                 <div class="col-sm-10">
-                    <textarea asp-for="Description" class="form-control mb-1"></textarea>
+                    <textarea asp-for="Description" id="editor" class="form-control mb-1"></textarea>
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
             </div>
@@ -37,7 +41,7 @@
             <div class="form-group row">
                 <label asp-for="ImageUrl" class="col-sm-2 col-form-label"></label>
                 <div class="col-sm-10">
-                    <input asp-for="ImageUrl" class="form-control mb-1">
+                    <input type="file" name="file">
                     <span asp-validation-for="ImageUrl" class="text-danger"></span>
                 </div>
             </div>
@@ -55,4 +59,15 @@
 @section Scripts{
 <script src="/modules/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="/modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+<script src="/modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor'))
+        .then(editor => {
+            window.editor = editor;
+        })
+        .catch(error => {
+            console.error('There was a problem initializing the editor.', error);
+        });
+</script>
 }
