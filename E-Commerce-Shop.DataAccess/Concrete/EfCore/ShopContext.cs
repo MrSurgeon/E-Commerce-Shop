@@ -10,7 +10,7 @@ namespace E_Commerce_Shop.DataAccess.Concrete.EfCore
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL("Server=localhost; Port=3306; Database=ShopDb; Uid=root; Pwd=root;");
+            optionsBuilder.UseMySql("Server=localhost; Port=3306; Database=ShopDb; Uid=root; Pwd=root;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

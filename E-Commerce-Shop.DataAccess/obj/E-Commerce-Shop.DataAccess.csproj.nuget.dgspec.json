@@ -46,15 +46,15 @@
               "target": "Package",
               "version": "[3.1.17, )"
             },
-            "MySql.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[3.1.14, )"
-            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[3.2.6, )"
             }
           },
           "imports": [

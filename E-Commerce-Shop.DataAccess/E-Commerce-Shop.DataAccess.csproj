@@ -1,18 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+
   <ItemGroup>
     <ProjectReference Include="..\E-Commerce-Shop.Entity\E-Commerce-Shop.Entity.csproj" />
   </ItemGroup>
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>E_Commerce_Shop.DataAccess</RootNamespace>
-  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.17">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="MySql.EntityFrameworkCore" Version="3.1.14" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.6" />
   </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>E_Commerce_Shop.DataAccess</RootNamespace>
+  </PropertyGroup>
 </Project>

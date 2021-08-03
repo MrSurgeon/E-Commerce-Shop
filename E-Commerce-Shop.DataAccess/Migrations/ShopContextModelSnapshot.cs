@@ -24,10 +24,10 @@ namespace E_Commerce_Shop.DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Url")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("CategoryId");
 
@@ -41,10 +41,10 @@ namespace E_Commerce_Shop.DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("ImageUrl")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<bool>("IsApproved")
                         .HasColumnType("tinyint(1)");
@@ -53,13 +53,13 @@ namespace E_Commerce_Shop.DataAccess.Migrations
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<double?>("Price")
                         .HasColumnType("double");
 
                     b.Property<string>("Url")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("ProductId");
 

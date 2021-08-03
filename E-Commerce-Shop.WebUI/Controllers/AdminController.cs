@@ -88,7 +88,6 @@ namespace E_Commerce_Shop.WebUI.Controllers
                     IsApproved = result.IsApproved,
                     IsHome = result.IsHome
                 });
-
             }
             return NotFound();
         }

@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using MySql.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace E_Commerce_Shop.DataAccess.Migrations
 {
@@ -12,8 +12,9 @@ namespace E_Commerce_Shop.DataAccess.Migrations
                 columns: table => new
                 {
                     CategoryId = table.Column<int>(nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: true),
+                    Url = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -25,12 +26,14 @@ namespace E_Commerce_Shop.DataAccess.Migrations
                 columns: table => new
                 {
                     ProductId = table.Column<int>(nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
+                    Url = table.Column<string>(nullable: true),
                     Price = table.Column<double>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     ImageUrl = table.Column<string>(nullable: true),
-                    IsApproved = table.Column<bool>(nullable: false)
+                    IsApproved = table.Column<bool>(nullable: false),
+                    IsHome = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
