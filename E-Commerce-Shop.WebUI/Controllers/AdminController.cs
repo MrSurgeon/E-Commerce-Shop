@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -97,18 +98,12 @@ namespace E_Commerce_Shop.WebUI.Controllers
         {
             if (!ModelState.IsValid)
             {
-
                 return View(adminEditViewModel);
             }
             if (_productService.GetById(adminEditViewModel.ProductId) == null)
             {
                 return NotFound();
             }
-            if (file == null)
-            {
-                _productService.ErrorMessage += "Resim seçilmedi veya yanlış format yüklenmeye çalışıldı !";
-            }
-
             if (_productService.Update(new Product()
             {
                 ProductId = adminEditViewModel.ProductId,
@@ -116,7 +111,7 @@ namespace E_Commerce_Shop.WebUI.Controllers
                 Price = adminEditViewModel.Price,
                 Description = adminEditViewModel.Description,
                 Url = adminEditViewModel.Url,
-                ImageUrl = await ImageToDepo(file),
+                ImageUrl = (file != null) ? await ImageToDepo(file) : adminEditViewModel.ImageUrl,
                 IsApproved = adminEditViewModel.IsApproved,
                 IsHome = adminEditViewModel.IsHome
             }, categoryIds))
@@ -125,6 +120,7 @@ namespace E_Commerce_Shop.WebUI.Controllers
                 return RedirectToAction("ProductList");
             }
             TemplateOfMessage(_productService.ErrorMessage, "danger");
+            adminEditViewModel.SelectedCategories = new List<Category>();
             return View(adminEditViewModel);
         }
         [HttpPost]

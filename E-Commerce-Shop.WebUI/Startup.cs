@@ -30,7 +30,8 @@ namespace E_Commerce_Shop.WebUI
             app.UseStaticFiles(new StaticFileOptions
             {
                 FileProvider = new PhysicalFileProvider(
-                    Path.Combine(env.ContentRootPath, "node_modules")),
+                Path.Combine(env.ContentRootPath, "node_modules")
+                ),
                 RequestPath = "/modules"
             });
             if (env.IsDevelopment())
