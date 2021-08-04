@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
@@ -19,6 +20,13 @@ namespace E_Commerce_Shop.WebUI
 {
     public class Startup
     {
+        private IConfiguration _configuration;
+
+        public Startup(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationContext>(opt =>
@@ -29,38 +37,39 @@ namespace E_Commerce_Shop.WebUI
             services.Configure<IdentityOptions>(opt =>
             {
                 //Password
-                opt.Password.RequireDigit=true;
-                opt.Password.RequiredLength=5;
-                opt.Password.RequireLowercase=true;
-                opt.Password.RequireUppercase=true;
-                opt.Password.RequireNonAlphanumeric=true;
+                opt.Password.RequireDigit = true;
+                opt.Password.RequiredLength = 5;
+                opt.Password.RequireLowercase = true;
+                opt.Password.RequireUppercase = true;
+                opt.Password.RequireNonAlphanumeric = true;
 
                 //User
-                opt.User.RequireUniqueEmail=true;
-                opt.SignIn.RequireConfirmedAccount=false;
-                opt.SignIn.RequireConfirmedEmail=false;
-                opt.SignIn.RequireConfirmedPhoneNumber=false;
+                opt.User.RequireUniqueEmail = true;
+                opt.SignIn.RequireConfirmedEmail = true;
+                opt.SignIn.RequireConfirmedPhoneNumber = false;
 
                 //Lockout
-                opt.Lockout.AllowedForNewUsers=true;
-                opt.Lockout.MaxFailedAccessAttempts=3;
-                opt.Lockout.DefaultLockoutTimeSpan=TimeSpan.FromMinutes(2);
+                opt.Lockout.AllowedForNewUsers = true;
+                opt.Lockout.MaxFailedAccessAttempts = 3;
+                opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(2);
 
             });
 
-            services.ConfigureApplicationCookie(opt=>
+            services.ConfigureApplicationCookie(opt =>
             {
-                opt.LoginPath="/account/login";
-                opt.LogoutPath="/account/logout";
-                opt.AccessDeniedPath="/account/accessdenied";
-                opt.SlidingExpiration=true;
-                opt.ExpireTimeSpan=TimeSpan.FromMinutes(60);
-                opt.Cookie= new CookieBuilder()
+                opt.LoginPath = "/account/login";
+                opt.LogoutPath = "/account/logout";
+                opt.AccessDeniedPath = "/account/accessdenied";
+                opt.SlidingExpiration = true;
+                opt.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+                opt.Cookie = new CookieBuilder()
                 {
-                    HttpOnly=true,
-                    Name=".ECommerceShopApp.Security.Cookie"
+                    HttpOnly = true,
+                    Name = ".ECommerceShopApp.Security.Cookie",
+                    SameSite = SameSiteMode.Strict
                 };
             });
+
             services.AddScoped<IProductRepository, EfCoreProductRepository>();
             services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
             services.AddScoped<ICategoryService, CategoryManager>();

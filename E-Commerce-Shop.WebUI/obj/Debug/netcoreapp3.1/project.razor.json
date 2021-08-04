@@ -14439,6 +14439,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Account\\ConfirmEmail.cshtml",
+      "TargetPath": "Views\\Account\\ConfirmEmail.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Account\\Login.cshtml",
       "TargetPath": "Views\\Account\\Login.cshtml",
       "FileKind": "mvc"
