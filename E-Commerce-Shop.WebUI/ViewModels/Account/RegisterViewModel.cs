@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace E_Commerce_Shop.WebUI.ViewModels.Account
 {
-    public class RegisterAddViewModel
+    public class RegisterViewModel
     {
         [Required(ErrorMessage = "Kullanıcı İsmi Boş Geçilemez")]
         public string UserName { get; set; }

@@ -16,9 +16,28 @@ namespace E_Commerce_Shop.WebUI.Controllers
             _signInManager = signInManager;
         }
 
-        public IActionResult Login()
+        [HttpGet]
+        public IActionResult Login(string ReturnUrl = null)
         {
-            return View();
+            return View(new LoginViewModel()
+            {
+                ReturnUrl = ReturnUrl
+            });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+            var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, false, false);
+            if (result.Succeeded)
+            {
+                return Redirect(model.ReturnUrl ?? "~/");
+            }
+            ModelState.AddModelError("", "Lütfen Kullanıcı adınızı veya şifrenizi kontrol ediniz.");
+            return View(model);
+
         }
 
         [HttpGet]
@@ -28,7 +47,7 @@ namespace E_Commerce_Shop.WebUI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterAddViewModel registerAddViewModel)
+        public async Task<IActionResult> Register(RegisterViewModel registerAddViewModel)
         {
             if (!ModelState.IsValid)
             {
@@ -49,7 +68,7 @@ namespace E_Commerce_Shop.WebUI.Controllers
                 //Email Confirm
                 return RedirectToAction("Login", "Account");
             }
-            ModelState.AddModelError("", "Bilinmeyen bir hata ouştu tekrar deneyiniz");
+            ModelState.AddModelError("", "Bilinmeyen bir hata oluştu tekrar deneyiniz");
             return View(registerAddViewModel);
         }
     }
