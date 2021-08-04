@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using E_Commerce_Shop.Business.Abstract;
 using E_Commerce_Shop.Business.Concrete;
@@ -7,6 +8,7 @@ using E_Commerce_Shop.DataAccess.DataSeed;
 using E_Commerce_Shop.WebUI.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,6 +26,41 @@ namespace E_Commerce_Shop.WebUI
             services.AddIdentity<User, IdentityRole>()
                     .AddEntityFrameworkStores<ApplicationContext>()
                     .AddDefaultTokenProviders();
+            services.Configure<IdentityOptions>(opt =>
+            {
+                //Password
+                opt.Password.RequireDigit=true;
+                opt.Password.RequiredLength=5;
+                opt.Password.RequireLowercase=true;
+                opt.Password.RequireUppercase=true;
+                opt.Password.RequireNonAlphanumeric=true;
+
+                //User
+                opt.User.RequireUniqueEmail=true;
+                opt.SignIn.RequireConfirmedAccount=false;
+                opt.SignIn.RequireConfirmedEmail=false;
+                opt.SignIn.RequireConfirmedPhoneNumber=false;
+
+                //Lockout
+                opt.Lockout.AllowedForNewUsers=true;
+                opt.Lockout.MaxFailedAccessAttempts=3;
+                opt.Lockout.DefaultLockoutTimeSpan=TimeSpan.FromMinutes(2);
+
+            });
+
+            services.ConfigureApplicationCookie(opt=>
+            {
+                opt.LoginPath="/account/login";
+                opt.LogoutPath="/account/logout";
+                opt.AccessDeniedPath="/account/accessdenied";
+                opt.SlidingExpiration=true;
+                opt.ExpireTimeSpan=TimeSpan.FromMinutes(60);
+                opt.Cookie= new CookieBuilder()
+                {
+                    HttpOnly=true,
+                    Name=".ECommerceShopApp.Security.Cookie"
+                };
+            });
             services.AddScoped<IProductRepository, EfCoreProductRepository>();
             services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
             services.AddScoped<ICategoryService, CategoryManager>();
@@ -46,7 +83,11 @@ namespace E_Commerce_Shop.WebUI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseAuthentication();
+
             app.UseRouting();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

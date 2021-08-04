@@ -12,3 +12,17 @@ C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\bin\De
 C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\obj\Debug\netstandard2.0\E-Commerce-Shop.Business.csproj.CopyComplete
 C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\obj\Debug\netstandard2.0\E-Commerce-Shop.Business.dll
 C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\obj\Debug\netstandard2.0\E-Commerce-Shop.Business.pdb
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\bin\Debug\netstandard2.0\E-Commerce-Shop.Business.deps.json
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\bin\Debug\netstandard2.0\E-Commerce-Shop.Business.dll
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\bin\Debug\netstandard2.0\E-Commerce-Shop.Business.pdb
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\bin\Debug\netstandard2.0\E-Commerce-Shop.DataAccess.dll
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\bin\Debug\netstandard2.0\E-Commerce-Shop.Entity.dll
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\bin\Debug\netstandard2.0\E-Commerce-Shop.Entity.pdb
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\bin\Debug\netstandard2.0\E-Commerce-Shop.DataAccess.pdb
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\obj\Debug\netstandard2.0\E-Commerce-Shop.Business.AssemblyInfoInputs.cache
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\obj\Debug\netstandard2.0\E-Commerce-Shop.Business.AssemblyInfo.cs
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\obj\Debug\netstandard2.0\E-Commerce-Shop.Business.csproj.CoreCompileInputs.cache
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\obj\Debug\netstandard2.0\E-Commerce-Shop.Business.csproj.CopyComplete
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\obj\Debug\netstandard2.0\E-Commerce-Shop.Business.dll
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\obj\Debug\netstandard2.0\E-Commerce-Shop.Business.pdb
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\obj\Debug\netstandard2.0\E-Commerce-Shop.Business.csprojAssemblyReference.cache

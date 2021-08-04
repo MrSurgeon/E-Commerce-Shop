@@ -8,12 +8,14 @@ using E_Commerce_Shop.Entity;
 using E_Commerce_Shop.WebUI.Helpers;
 using E_Commerce_Shop.WebUI.ViewModels;
 using E_Commerce_Shop.WebUI.ViewModels.Admin;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace E_Commerce_Shop.WebUI.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         private readonly IProductService _productService;
