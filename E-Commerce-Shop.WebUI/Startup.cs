@@ -4,8 +4,11 @@ using E_Commerce_Shop.Business.Concrete;
 using E_Commerce_Shop.DataAccess.Abstract;
 using E_Commerce_Shop.DataAccess.Concrete.EfCore;
 using E_Commerce_Shop.DataAccess.DataSeed;
+using E_Commerce_Shop.WebUI.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
@@ -14,16 +17,19 @@ namespace E_Commerce_Shop.WebUI
 {
     public class Startup
     {
-
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ApplicationContext>(opt =>
+            opt.UseMySql("Server = localhost; Port = 3306; Database = ShopDb; Uid = root; Pwd = root; "));
+            services.AddIdentity<User, IdentityRole>()
+                    .AddEntityFrameworkStores<ApplicationContext>()
+                    .AddDefaultTokenProviders();
             services.AddScoped<IProductRepository, EfCoreProductRepository>();
             services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<IProductService, ProductManager>();
             services.AddControllersWithViews();
         }
-
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseStaticFiles();

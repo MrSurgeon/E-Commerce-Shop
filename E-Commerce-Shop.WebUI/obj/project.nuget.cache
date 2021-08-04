@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ivXuGu6nVcry6o174vb0szOpq+THCAhhEYl26RfREIxC/hA8wsuc5dcrfqNz3D449OgOAbBI6KFQhLbN7gbOHA==",
+  "dgSpecHash": "DuMph5EnStYOJRzqMmnoyX1ep89WN7aXan9Ffck7PplkLzBTUVh5mhrCpIDaYv07T0263GhNUVS/Bn2WN/2C4A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\E-Commerce-Shop.WebUI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.17\\microsoft.aspnetcore.cryptography.internal.3.1.17.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.17\\microsoft.aspnetcore.cryptography.keyderivation.3.1.17.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\3.1.17\\microsoft.aspnetcore.identity.entityframeworkcore.3.1.17.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -19,6 +22,8 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.17\\microsoft.extensions.configuration.binder.3.1.17.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.17\\microsoft.extensions.dependencyinjection.3.1.17.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.17\\microsoft.extensions.dependencyinjection.abstractions.3.1.17.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.extensions.identity.core\\3.1.17\\microsoft.extensions.identity.core.3.1.17.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.extensions.identity.stores\\3.1.17\\microsoft.extensions.identity.stores.3.1.17.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.extensions.logging\\3.1.17\\microsoft.extensions.logging.3.1.17.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.17\\microsoft.extensions.logging.abstractions.3.1.17.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.extensions.options\\3.1.17\\microsoft.extensions.options.3.1.17.nupkg.sha512",
