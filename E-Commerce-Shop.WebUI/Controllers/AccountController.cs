@@ -1,5 +1,5 @@
-
 using System.Threading.Tasks;
+using E_Commerce_Shop.Services.EmailService;
 using E_Commerce_Shop.WebUI.Helpers;
 using E_Commerce_Shop.WebUI.Identity;
 using E_Commerce_Shop.WebUI.ViewModels.Account;
@@ -9,17 +9,19 @@ using Newtonsoft.Json;
 
 namespace E_Commerce_Shop.WebUI.Controllers
 {
-    
+
     public class AccountController : Controller
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager)
+        private readonly IEmailSender _emailSender;
+        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, IEmailSender emailSender)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _emailSender = emailSender;
         }
-        
+
         [HttpGet]
         public IActionResult Login(string ReturnUrl = null)
         {
@@ -72,14 +74,10 @@ namespace E_Commerce_Shop.WebUI.Controllers
             if (result.Succeeded)
             {
                 //Generate Token
-                var confirmToken = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                var url = Url.ActionLink("ConfirmEmail", "Account", new
-                {
-                    userId = user.Id,
-                    token = confirmToken
-                });
-
-                // await _emailSender.SendEmailAsync(registerAddViewModel.EMail, "Hesabınızı Onaylayınız.", $"Lütfen email hesabınızı onaylamanız için gönderilen linke <a href='{url}'>tıklayınız.</a> ");
+                var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                var confirmationLink = Url.Action(nameof(ConfirmEmail), "Account", new { token, email = user.Email }, Request.Scheme);
+                var message = new Message(new string[] { user.Email }, "Confirmation email link", $"Lütfen emailinizi onaylamak için gönderilen linke <a href=\"{confirmationLink}\">tıklayınız.</a>");
+                await _emailSender.SendEmailAsync(message);
                 return RedirectToAction("Login", "Account");
             }
             ModelState.AddModelError("", "Bilinmeyen bir hata oluştu tekrar deneyiniz");
@@ -91,18 +89,21 @@ namespace E_Commerce_Shop.WebUI.Controllers
             return Redirect("~/");
         }
 
-        public async Task<IActionResult> ConfirmEmail(string token, string userId)
+
+        public async Task<IActionResult> ConfirmEmail(string token, string email)
         {
-            if (token != null || userId != null)
+
+            var user = await _userManager.FindByIdAsync(email);
+            if (user != null)
             {
-                var user = await _userManager.FindByIdAsync(userId);
-                if (user != null)
+                var result = await _userManager.ConfirmEmailAsync(user, token);
+                if (result.Succeeded)
                 {
-                    await _userManager.ConfirmEmailAsync(user, token);
                     TemplateOfMessage("Hesabınız onaylandı. Bu sayfayı kapatabilirsiniz.", "success");
                     return View();
-                }
+                }   
             }
+
             TemplateOfMessage("Hesabınız onaylanırken sorun oluştu. Tekrar onaylanma başvurusunda bulununuz.", "warning");
             return View();
         }

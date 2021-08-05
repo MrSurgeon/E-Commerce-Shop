@@ -5,6 +5,7 @@ using E_Commerce_Shop.Business.Concrete;
 using E_Commerce_Shop.DataAccess.Abstract;
 using E_Commerce_Shop.DataAccess.Concrete.EfCore;
 using E_Commerce_Shop.DataAccess.DataSeed;
+using E_Commerce_Shop.Services.EmailService;
 using E_Commerce_Shop.WebUI.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -20,7 +21,7 @@ namespace E_Commerce_Shop.WebUI
 {
     public class Startup
     {
-        private IConfiguration _configuration;
+        private readonly IConfiguration _configuration;
 
         public Startup(IConfiguration configuration)
         {
@@ -69,6 +70,12 @@ namespace E_Commerce_Shop.WebUI
                     SameSite = SameSiteMode.Strict
                 };
             });
+
+            var emailConfig = _configuration
+                .GetSection("EmailConfiguration")
+                .Get<EmailConfiguration>();
+            services.AddSingleton(emailConfig);
+            services.AddScoped<IEmailSender, EmailSender>();
 
             services.AddScoped<IProductRepository, EfCoreProductRepository>();
             services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
