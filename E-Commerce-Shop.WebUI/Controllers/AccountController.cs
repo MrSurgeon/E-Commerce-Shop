@@ -1,11 +1,11 @@
 using System.Threading.Tasks;
 using E_Commerce_Shop.Services.EmailService;
+using E_Commerce_Shop.WebUI.Extensions;
 using E_Commerce_Shop.WebUI.Helpers;
 using E_Commerce_Shop.WebUI.Identity;
 using E_Commerce_Shop.WebUI.ViewModels.Account;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 
 namespace E_Commerce_Shop.WebUI.Controllers
 {
@@ -86,36 +86,117 @@ namespace E_Commerce_Shop.WebUI.Controllers
         public async Task<IActionResult> SignOut()
         {
             await _signInManager.SignOutAsync();
+            TempData.Put<AlertMessage>("message", new AlertMessage()
+            {
+                Title = "Bilgi Mesajı",
+                AlertType = "warning",
+                Message = "Hesabınızın oturumu güvenli bir şekilde kapatıldı."
+            });
             return Redirect("~/");
         }
 
 
         public async Task<IActionResult> ConfirmEmail(string token, string email)
         {
+            if (token == null || email == null)
+            {
+                TempData.Put<AlertMessage>("message", new AlertMessage()
+                {
+                    Title = "Hata Mesajı",
+                    AlertType = "danger",
+                    Message = "Email veya token bilgisi hasarlıdır."
+                });
+                return View();
+            }
+            var user = await _userManager.FindByEmailAsync(email);
 
-            var user = await _userManager.FindByIdAsync(email);
             if (user != null)
             {
                 var result = await _userManager.ConfirmEmailAsync(user, token);
                 if (result.Succeeded)
                 {
-                    TemplateOfMessage("Hesabınız onaylandı. Bu sayfayı kapatabilirsiniz.", "success");
+                    TempData.Put<AlertMessage>("message", new AlertMessage()
+                    {
+                        Title = "Başarı",
+                        AlertType = "success",
+                        Message = "Hesabınız onaylandı. Bu sayfayı kapatabilirsiniz."
+                    });
                     return View();
-                }   
+                }
             }
-
-            TemplateOfMessage("Hesabınız onaylanırken sorun oluştu. Tekrar onaylanma başvurusunda bulununuz.", "warning");
+            TempData.Put<AlertMessage>("message", new AlertMessage()
+            {
+                Title = "Hata Mesajı",
+                AlertType = "warning",
+                Message = "Hesabınız onaylanırken sorun oluştu. Tekrar onaylanma başvurusunda bulununuz."
+            });
             return View();
         }
 
-        private void TemplateOfMessage(string message, string alertType)
+        [HttpGet]
+        public IActionResult ForgotPassword()
         {
-            var messagePackage = new AlertMessage()
-            {
-                Message = message,
-                AlertType = alertType
-            };
-            TempData["Message"] = JsonConvert.SerializeObject(messagePackage);
+            return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ForgotPassword(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+                return RedirectToAction("Index", "Home");
+
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user != null)
+            {
+                var resetToken = await _userManager.GeneratePasswordResetTokenAsync(user);
+                var confirmationLink = Url.Action(nameof(ResetPassword), "Account", new { token = resetToken, email = email }, Request.Scheme);
+                var message = new Message(new string[] { email }, "Change The Password Link", $"Lütfen şifrenizi değiştirebilmek için gönderilen linke <a href=\"{confirmationLink}\">tıklayınız.</a>");
+                await _emailSender.SendEmailAsync(message);
+                return RedirectToAction("Login");
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult ResetPassword(string token, string email)
+        {
+            if (token == null || email == null)
+                return RedirectToAction("ForgotPassword");
+
+            var model = new ResetPasswordViewModel()
+            {
+                Email = email,
+                Token = token
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user != null)
+            {
+                var result = await _userManager.ResetPasswordAsync(user, model.Token, model.Password);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("ResetPasswordConfirmation");
+                }
+            }
+            return Redirect("~/");
+        }
+
+        public IActionResult ResetPasswordConfirmation()
+        {
+            return View();
+        }
+
     }
 }

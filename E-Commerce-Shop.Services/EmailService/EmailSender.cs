@@ -14,6 +14,7 @@ namespace E_Commerce_Shop.Services.EmailService
         public async Task SendEmailAsync(Message message)
         {
             var mailMessage = CreateEmailMessage(message);
+            
             await SendAsync(mailMessage);
         }
         private MimeMessage CreateEmailMessage(Message message)

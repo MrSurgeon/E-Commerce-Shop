@@ -34,6 +34,7 @@
 
                 @if (!User.Identity.IsAuthenticated)
                 {
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="/Account/Login">Sign In</a>
                     </li>
@@ -43,6 +44,9 @@
                 }
                 else
                 {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Account/ForgotPassword">Forgot Password</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/Account/SignOut">Sign Out</a>
                     </li>
