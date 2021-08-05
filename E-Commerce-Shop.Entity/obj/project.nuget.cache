@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "GQi6Jrpq5i/fWayiOkvejvvR0VOgOGW+/ZLGmEjpFr/Tne/QdYkiANrrcdPA28rtxi7wD18XjrOC/FG+9Wrfmw==",
+  "dgSpecHash": "24/R7jsAV+zylJ7lmcyhl6I+JwN+Z6geIyMnmYT91pZjx/RRwt96aNwU/3rVv8IJ4G/EIBmcu8sat+trD0APIg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Entity\\E-Commerce-Shop.Entity.csproj",
+  "projectFilePath": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Entity\\E-Commerce-Shop.Entity.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Lenovo\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\Tarık\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Tarık\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

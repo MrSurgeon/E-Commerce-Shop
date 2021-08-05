@@ -10,3 +10,15 @@ C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\bin\
 C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\obj\Debug\netstandard2.0\E-Commerce-Shop.DataAccess.csproj.CopyComplete
 C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\obj\Debug\netstandard2.0\E-Commerce-Shop.DataAccess.dll
 C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\obj\Debug\netstandard2.0\E-Commerce-Shop.DataAccess.pdb
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\bin\Debug\netstandard2.0\E-Commerce-Shop.DataAccess.deps.json
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\bin\Debug\netstandard2.0\E-Commerce-Shop.DataAccess.dll
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\bin\Debug\netstandard2.0\E-Commerce-Shop.DataAccess.pdb
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\bin\Debug\netstandard2.0\E-Commerce-Shop.Entity.dll
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\bin\Debug\netstandard2.0\E-Commerce-Shop.Entity.pdb
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\obj\Debug\netstandard2.0\E-Commerce-Shop.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\obj\Debug\netstandard2.0\E-Commerce-Shop.DataAccess.AssemblyInfo.cs
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\obj\Debug\netstandard2.0\E-Commerce-Shop.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\obj\Debug\netstandard2.0\E-Commerce-Shop.DataAccess.csproj.CopyComplete
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\obj\Debug\netstandard2.0\E-Commerce-Shop.DataAccess.dll
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\obj\Debug\netstandard2.0\E-Commerce-Shop.DataAccess.pdb
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\obj\Debug\netstandard2.0\E-Commerce-Shop.DataAccess.csprojAssemblyReference.cache

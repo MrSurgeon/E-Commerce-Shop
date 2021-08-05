@@ -5,15 +5,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using E_Commerce_Shop.Business.Abstract;
 using E_Commerce_Shop.Entity;
+using E_Commerce_Shop.WebUI.Extensions;
 using E_Commerce_Shop.WebUI.Helpers;
 using E_Commerce_Shop.WebUI.ViewModels;
 using E_Commerce_Shop.WebUI.ViewModels.Admin;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
+
 
 namespace E_Commerce_Shop.WebUI.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         private readonly IProductService _productService;
@@ -60,10 +63,20 @@ namespace E_Commerce_Shop.WebUI.Controllers
 
             if (_productService.Create(entity))
             {
-                TemplateOfMessage($"{entity.Name} isimli ürün eklendi", "success");
+                TempData.Put<AlertMessage>("message", new AlertMessage()
+                {
+                    Title = "Bilgi Mesajı",
+                    AlertType = "success",
+                    Message = $"{entity.Name} isimli ürün eklendi"
+                });
                 return RedirectToAction("ProductList");
             }
-            TemplateOfMessage(_productService.ErrorMessage, "danger");
+            TempData.Put<AlertMessage>("message", new AlertMessage()
+            {
+                Title = "Hata Mesajı",
+                AlertType = "danger",
+                Message = _productService.ErrorMessage
+            });
             return View(adminProductViewModel);
         }
 
@@ -115,10 +128,20 @@ namespace E_Commerce_Shop.WebUI.Controllers
                 IsHome = adminEditViewModel.IsHome
             }, categoryIds))
             {
-                TemplateOfMessage($"{adminEditViewModel.Name} isimli ürünümüz güncellendi.", "secondary");
+                TempData.Put<AlertMessage>("message", new AlertMessage()
+                {
+                    Title = "Bilgi Mesajı",
+                    AlertType = "secondary",
+                    Message = $"{adminEditViewModel.Name} isimli ürünümüz güncellendi."
+                });
                 return RedirectToAction("ProductList");
             }
-            TemplateOfMessage(_productService.ErrorMessage, "danger");
+            TempData.Put<AlertMessage>("message", new AlertMessage()
+            {
+                Title = "Hata Mesajı",
+                AlertType = "danger",
+                Message = _productService.ErrorMessage
+            });
             adminEditViewModel.SelectedCategories = new List<Category>();
             return View(adminEditViewModel);
         }
@@ -131,14 +154,13 @@ namespace E_Commerce_Shop.WebUI.Controllers
                 if (result != null)
                 {
                     _productService.Delete(result);
-
                     //Alert Message Tanımlaması
-                    var message = new AlertMessage()
+                    TempData.Put<AlertMessage>("message", new AlertMessage()
                     {
+                        Title = "Bilgi Mesajı",
                         Message = $"{result.Name} isimli ürünümüz silindi.",
                         AlertType = "danger"
-                    };
-                    TempData["Message"] = JsonConvert.SerializeObject(message);
+                    });
                     return RedirectToAction("ProductList");
                 }
             }
@@ -168,12 +190,12 @@ namespace E_Commerce_Shop.WebUI.Controllers
                 Name = adminCreateCategoryViewModel.Name,
                 Url = adminCreateCategoryViewModel.Url
             });
-            var message = new AlertMessage()
+            TempData.Put<AlertMessage>("message", new AlertMessage()
             {
+                Title = "Bilgi Mesajı",
                 Message = $"{adminCreateCategoryViewModel.Name} isimli kategori sisteme eklendi.",
                 AlertType = "success"
-            };
-            TempData["Message"] = JsonConvert.SerializeObject(message);
+            });
             return RedirectToAction("CategoryList");
         }
 
@@ -216,12 +238,14 @@ namespace E_Commerce_Shop.WebUI.Controllers
                     Name = adminCategoryEditViewModel.Name,
                     Url = adminCategoryEditViewModel.Url
                 });
-                var message = new AlertMessage()
+
+
+                TempData.Put<AlertMessage>("message", new AlertMessage()
                 {
+                    Title = "Bilgi Mesajı",
                     Message = $"{adminCategoryEditViewModel.Name} isimli kategori güncellendi.",
                     AlertType = "warning"
-                };
-                TempData["Message"] = JsonConvert.SerializeObject(message);
+                });
                 return RedirectToAction("CategoryList");
             }
             return NotFound();
@@ -234,12 +258,12 @@ namespace E_Commerce_Shop.WebUI.Controllers
             if (result != null)
             {
                 _categoryService.Delete(result);
-                var message = new AlertMessage()
+                TempData.Put<AlertMessage>("message", new AlertMessage()
                 {
+                    Title = "Bilgi Mesajı",
                     Message = $"{result.Name} isimli kategori silindi.",
                     AlertType = "danger"
-                };
-                TempData["Message"] = JsonConvert.SerializeObject(message);
+                });
                 return RedirectToAction("CategoryList");
             }
             return NotFound();
@@ -261,15 +285,6 @@ namespace E_Commerce_Shop.WebUI.Controllers
             return NotFound();
         }
 
-        private void TemplateOfMessage(string message, string alertType)
-        {
-            var messagePackage = new AlertMessage()
-            {
-                Message = message,
-                AlertType = alertType
-            };
-            TempData["Message"] = JsonConvert.SerializeObject(messagePackage);
-        }
 
         private async Task<string> ImageToDepo(IFormFile file)
         {

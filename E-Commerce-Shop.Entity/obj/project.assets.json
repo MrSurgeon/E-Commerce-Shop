@@ -180,24 +180,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lenovo\\.nuget\\packages\\": {}
+    "C:\\Users\\Tarık\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Entity\\E-Commerce-Shop.Entity.csproj",
+      "projectUniqueName": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Entity\\E-Commerce-Shop.Entity.csproj",
       "projectName": "E-Commerce-Shop.Entity",
-      "projectPath": "C:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Entity\\E-Commerce-Shop.Entity.csproj",
-      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lenovo\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Entity\\obj\\",
+      "projectPath": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Entity\\E-Commerce-Shop.Entity.csproj",
+      "packagesPath": "C:\\Users\\Tarık\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Entity\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Tarık\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

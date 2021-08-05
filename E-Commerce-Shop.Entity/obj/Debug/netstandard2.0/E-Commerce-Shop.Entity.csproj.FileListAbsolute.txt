@@ -7,3 +7,12 @@ C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debu
 C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.csproj.CoreCompileInputs.cache
 C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.dll
 C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.pdb
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\bin\Debug\netstandard2.0\E-Commerce-Shop.Entity.deps.json
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\bin\Debug\netstandard2.0\E-Commerce-Shop.Entity.dll
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\bin\Debug\netstandard2.0\E-Commerce-Shop.Entity.pdb
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.AssemblyInfoInputs.cache
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.AssemblyInfo.cs
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.csproj.CoreCompileInputs.cache
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.dll
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.pdb
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.csprojAssemblyReference.cache

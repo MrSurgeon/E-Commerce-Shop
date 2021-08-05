@@ -1,14 +1,18 @@
+using System;
 using System.IO;
 using E_Commerce_Shop.Business.Abstract;
 using E_Commerce_Shop.Business.Concrete;
 using E_Commerce_Shop.DataAccess.Abstract;
 using E_Commerce_Shop.DataAccess.Concrete.EfCore;
 using E_Commerce_Shop.DataAccess.DataSeed;
+using E_Commerce_Shop.Services.EmailService;
 using E_Commerce_Shop.WebUI.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
@@ -17,6 +21,13 @@ namespace E_Commerce_Shop.WebUI
 {
     public class Startup
     {
+        private readonly IConfiguration _configuration;
+
+        public Startup(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationContext>(opt =>
@@ -24,6 +35,48 @@ namespace E_Commerce_Shop.WebUI
             services.AddIdentity<User, IdentityRole>()
                     .AddEntityFrameworkStores<ApplicationContext>()
                     .AddDefaultTokenProviders();
+            services.Configure<IdentityOptions>(opt =>
+            {
+                //Password
+                opt.Password.RequireDigit = true;
+                opt.Password.RequiredLength = 5;
+                opt.Password.RequireLowercase = true;
+                opt.Password.RequireUppercase = true;
+                opt.Password.RequireNonAlphanumeric = true;
+
+                //User
+                opt.User.RequireUniqueEmail = true;
+                opt.SignIn.RequireConfirmedEmail = true;
+                opt.SignIn.RequireConfirmedPhoneNumber = false;
+
+                //Lockout
+                opt.Lockout.AllowedForNewUsers = true;
+                opt.Lockout.MaxFailedAccessAttempts = 3;
+                opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(2);
+
+            });
+
+            services.ConfigureApplicationCookie(opt =>
+            {
+                opt.LoginPath = "/account/login";
+                opt.LogoutPath = "/account/logout";
+                opt.AccessDeniedPath = "/account/accessdenied";
+                opt.SlidingExpiration = true;
+                opt.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+                opt.Cookie = new CookieBuilder()
+                {
+                    HttpOnly = true,
+                    Name = ".ECommerceShopApp.Security.Cookie",
+                    SameSite = SameSiteMode.Strict
+                };
+            });
+
+            var emailConfig = _configuration
+                .GetSection("EmailConfiguration")
+                .Get<EmailConfiguration>();
+            services.AddSingleton(emailConfig);
+            services.AddScoped<IEmailSender, EmailSender>();
+
             services.AddScoped<IProductRepository, EfCoreProductRepository>();
             services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
             services.AddScoped<ICategoryService, CategoryManager>();
@@ -46,7 +99,11 @@ namespace E_Commerce_Shop.WebUI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseAuthentication();
+
             app.UseRouting();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
