@@ -92,7 +92,6 @@ C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\bin\Debug
 C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 C:\Users\Lenovo\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\bin\Debug\netcoreapp3.1\appsettings.Development.json
-C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\bin\Debug\netcoreapp3.1\global.json
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\bin\Debug\netcoreapp3.1\package-lock.json
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\bin\Debug\netcoreapp3.1\package.json
@@ -197,3 +196,6 @@ C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\obj\Debug
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPasswordConfirmation.cshtml.g.cs
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\obj\Debug\netcoreapp3.1\E-Commerce-Shop.WebUI.csprojAssemblyReference.cache
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_resultMessage.cshtml.g.cs
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\AdminRole\RoleCreate.cshtml.g.cs
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\AdminRole\RoleList.cshtml.g.cs
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\bin\Debug\netcoreapp3.1\appsettings.json

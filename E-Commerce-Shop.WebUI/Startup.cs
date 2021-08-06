@@ -75,6 +75,7 @@ namespace E_Commerce_Shop.WebUI
                 .GetSection("EmailConfiguration")
                 .Get<EmailConfiguration>();
             services.AddSingleton(emailConfig);
+
             services.AddScoped<IEmailSender, EmailSender>();
 
             services.AddScoped<IProductRepository, EfCoreProductRepository>();
@@ -107,6 +108,36 @@ namespace E_Commerce_Shop.WebUI
 
             app.UseEndpoints(endpoints =>
             {
+                
+                endpoints.MapControllerRoute(
+                  name: "adminrolelist",
+                  pattern: "adminrole/roles",
+                   defaults: new
+                   {
+                       controller = "AdminRole",
+                       action = "RoleList"
+                   }
+              );
+
+              endpoints.MapControllerRoute(
+                  name: "adminrolecreate",
+                  pattern: "adminrole/rolecreate",
+                   defaults: new
+                   {
+                       controller = "AdminRole",
+                       action = "RoleCreate"
+                   }
+              );
+              //adminrole/roles/1 =>adminrole/edit/1
+              endpoints.MapControllerRoute(
+                  name: "adminroleedit",
+                  pattern: "adminrole/roles/{id?}",
+                   defaults: new
+                   {
+                       controller = "AdminRole",
+                       action = "RoleEdit"
+                   }
+              );
                 //admin/categories
                 endpoints.MapControllerRoute(
                   name: "admincategorylist",

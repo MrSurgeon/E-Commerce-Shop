@@ -61,8 +61,22 @@ using E_Commerce_Shop.WebUI.Extensions;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 9 "C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\Views\_ViewImports.cshtml"
+using E_Commerce_Shop.WebUI.ViewModels.AdminRole;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 10 "C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"be55e76d2efabfbfc94b09e380e274e12614dcdd", @"/Views/Shop/Search.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"eea1073d0e4fca2d2248d50b287a72c8a575a229", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"82fe3460b19e031a67cd295484de703630b76972", @"/Views/_ViewImports.cshtml")]
     public class Views_Shop_Search : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<SearchViewModel>
     {
         #pragma warning disable 1998
