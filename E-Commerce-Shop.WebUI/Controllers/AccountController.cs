@@ -192,6 +192,10 @@ namespace E_Commerce_Shop.WebUI.Controllers
             }
             return Redirect("~/");
         }
+         public IActionResult AccessDenied()
+        {
+            return View();
+        }
 
         public IActionResult ResetPasswordConfirmation()
         {

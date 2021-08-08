@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using E_Commerce_Shop.WebUI.Extensions;
 using E_Commerce_Shop.WebUI.Helpers;
@@ -21,7 +23,7 @@ namespace E_Commerce_Shop.WebUI.Controllers
 
         public IActionResult RoleList()
         {
-            return View(_roleManager.Roles);
+            return View(_roleManager.Roles.ToList());
         }
 
         [HttpGet]
@@ -59,5 +61,101 @@ namespace E_Commerce_Shop.WebUI.Controllers
             }
             return View(model);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> RoleEdit(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                TempData.Put<AlertMessage>("message", new AlertMessage()
+                {
+                    Title = "Hata Mesajı",
+                    AlertType = "danger",
+                    Message = "İlgili role detay sayfasına ulaşılamadı"
+                });
+                return RedirectToAction("RoleList");
+            }
+            var role = await _roleManager.FindByIdAsync(id);
+            if (role != null)
+            {
+                var members = new List<User>();
+                var nonMembers = new List<User>();
+
+                foreach (var user in _userManager.Users.ToList())
+                {
+                    var list = (await _userManager.IsInRoleAsync(user, role.Name)) ? members : nonMembers;
+                    list.Add(user);
+                }
+                var model = new RoleEditViewModel()
+                {
+                    RoleId = role.Id,
+                    RoleName = role.Name,
+                    Members = members,
+                    NonMembers = nonMembers
+                };
+                return View(model);
+            }
+            TempData.Put<AlertMessage>("message", new AlertMessage()
+            {
+                Title = "Hata Mesajı",
+                AlertType = "danger",
+                Message = "İlgili rol server tarafında bulunamadı. Tekrar deneyiniz."
+            });
+            return RedirectToAction("RoleList");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RoleEdit(RoleEditViewModel model)
+        {
+            if (string.IsNullOrEmpty(model.RoleName) && string.IsNullOrEmpty(model.RoleId))
+            {
+                TempData.Put<AlertMessage>("message", new AlertMessage()
+                {
+                    Title = "Hata Mesajı",
+                    AlertType = "danger",
+                    Message = "İlgili role bilgilerinin eksik olduğu farkedildi. Tekrar işlemleri gerçekleştiriniz."
+                });
+                return RedirectToAction("RoleList");
+            }
+            if (model.IdsToAdd != null)
+            {
+                foreach (var userId in model.IdsToAdd)
+                {
+                    var user = await _userManager.FindByIdAsync(userId);
+                    if (user != null)
+                    {
+                        var result = await _userManager.AddToRoleAsync(user, model.RoleName);
+                        if (!result.Succeeded)
+                        {
+                            foreach (var error in result.Errors)
+                            {
+                                ModelState.AddModelError("", error.Description);
+                            }
+                        }
+                    }
+                }
+            }
+            if (model.IdsToDelete != null)
+            {
+                foreach (var userId in model.IdsToDelete)
+                {
+                    var user = await _userManager.FindByIdAsync(userId);
+                    if (user != null)
+                    {
+                        var result = await _userManager.RemoveFromRoleAsync(user, model.RoleName);
+                        if (!result.Succeeded)
+                        {
+                            foreach (var error in result.Errors)
+                            {
+                                ModelState.AddModelError("", error.Description);
+                            }
+                        }
+                    }
+                }
+            }
+            return Redirect("/adminrole/roles/" + model.RoleId);
+        }
+
     }
 }

@@ -14419,6 +14419,11 @@
   "RootNamespace": "E_Commerce_Shop.WebUI",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\AdminRole\\RoleCreate.cshtml",
+      "TargetPath": "Views\\AdminRole\\RoleCreate.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Product\\index.cshtml",
       "TargetPath": "Views\\Product\\index.cshtml",
       "FileKind": "mvc"
@@ -14529,6 +14534,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\AdminRole\\RoleEdit.cshtml",
+      "TargetPath": "Views\\AdminRole\\RoleEdit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Shop\\Details.cshtml",
       "TargetPath": "Views\\Shop\\Details.cshtml",
       "FileKind": "mvc"
@@ -14551,6 +14561,11 @@
     {
       "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Admin\\CreateProduct.cshtml",
       "TargetPath": "Views\\Admin\\CreateProduct.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Account\\AccessDenied.cshtml",
+      "TargetPath": "Views\\Account\\AccessDenied.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14581,6 +14596,16 @@
     {
       "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Account\\Register.cshtml",
       "TargetPath": "Views\\Account\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\AdminUser\\UserList.cshtml",
+      "TargetPath": "Views\\AdminUser\\UserList.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\AdminRole\\RoleList.cshtml",
+      "TargetPath": "Views\\AdminRole\\RoleList.cshtml",
       "FileKind": "mvc"
     }
   ],

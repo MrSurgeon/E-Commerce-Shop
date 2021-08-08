@@ -1,0 +1,58 @@
+@model RoleEditViewModel
+<h1>Role Edit </h1>
+<hr>
+<div class="row">
+    <div class="col-md-12">
+        <form asp-controller="AdminRole" asp-action="RoleEdit" method="POST">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" name="RoleName" value="@Model.RoleName">
+            <input type="hidden" name="RoleId" value="@Model.RoleId">
+            <h6 class="bg-info text-white p-1">Add to @Model.RoleName</h6>
+            <table class="table table-bordered table-sm">
+                @if (!Model.NonMembers.Any())
+                {
+                    <tr>
+                        <td colspan="2">Bütün kullanıcılar bu role ait !</td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var user in Model.NonMembers)
+                    {
+                        <tr>
+                            <td>@user.UserName</td>
+                            <td style="width: 150px;">
+                                <input type="checkbox" name="IdsToAdd" value="@user.Id">
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+            <hr>
+            <h6 class="bg-info text-white p-1">Remove from @Model.RoleName</h6>
+            <table class="table table-bordered table-sm">
+                @if (!Model.Members.Any())
+                {
+                    <tr>
+                        <td colspan="2">Bu rolden çıkarılabilecek kullanıcı bulunamadı!</td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var user in Model.Members)
+                    {
+                        <tr>
+                            <td>@user.UserName</td>
+                            <td style="width: 150px;">
+                                <input type="checkbox" name="IdsToDelete" value="@user.Id">
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</div>

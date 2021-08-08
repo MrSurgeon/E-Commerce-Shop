@@ -1,9 +1,9 @@
-@model List<IdentityRole>
+@model IEnumerable<User>
 
 <div class="row">
     <div class="col-md-12">
         <h2>
-            Admin Category List
+            Admin User List
         </h2>
         <hr>
         @if (Model.Count() > 0)
@@ -11,20 +11,26 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Name</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">E-mail Confirmed</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td>@item.Id</td>
-                            <td>@item.Name</td>
+                        <tr class="@(item.EmailConfirmed?"":"bg-warning")">
+                            <td>@item.FirstName</td>
+                            <td>@item.LastName</td>
+                            <td>@item.UserName</td>
+                            <td>@item.Email</td>
+                            <td>@item.EmailConfirmed</td>
                             <td>
-                                <a href="/adminrole/roles/@item.Id" class="btn btn-primary btn-sm">Edit</a>
-                                <form action="/adminrole/roles/deleterole" method="POST" style="display: inline;">
+                                <a href="/adminuser/users/@item.Id" class="btn btn-primary btn-sm">Edit</a>
+                                <form action="/adminuser/users/deleteuser" method="POST" style="display: inline;">
                                     <input type="hidden" name="id" value="@item.Id">
                                     <button type="submit" class="btn btn-primary btn-sm">Delete</button>
                                 </form>

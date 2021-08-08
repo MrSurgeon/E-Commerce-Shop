@@ -108,7 +108,16 @@ namespace E_Commerce_Shop.WebUI
 
             app.UseEndpoints(endpoints =>
             {
-                
+
+             endpoints.MapControllerRoute(
+                  name: "accountaccessdenied",
+                  pattern: "account/accessdenied",
+                   defaults: new
+                   {
+                       controller = "Account",
+                       action = "AccessDenied"
+                   }
+              );   
                 endpoints.MapControllerRoute(
                   name: "adminrolelist",
                   pattern: "adminrole/roles",

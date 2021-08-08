@@ -16,7 +16,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace E_Commerce_Shop.WebUI.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "admin")]
     public class AdminController : Controller
     {
         private readonly IProductService _productService;
@@ -285,7 +285,7 @@ namespace E_Commerce_Shop.WebUI.Controllers
             return NotFound();
         }
 
-
+       
         private async Task<string> ImageToDepo(IFormFile file)
         {
             var extension = Path.GetExtension(file.FileName);
