@@ -14539,6 +14539,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\AdminUser\\UserEdit.cshtml",
+      "TargetPath": "Views\\AdminUser\\UserEdit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Shop\\Details.cshtml",
       "TargetPath": "Views\\Shop\\Details.cshtml",
       "FileKind": "mvc"

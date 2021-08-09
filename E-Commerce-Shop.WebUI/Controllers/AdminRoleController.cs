@@ -5,11 +5,13 @@ using E_Commerce_Shop.WebUI.Extensions;
 using E_Commerce_Shop.WebUI.Helpers;
 using E_Commerce_Shop.WebUI.Identity;
 using E_Commerce_Shop.WebUI.ViewModels.AdminRole;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace E_Commerce_Shop.WebUI.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminRoleController : Controller
     {
         private readonly RoleManager<IdentityRole> _roleManager;

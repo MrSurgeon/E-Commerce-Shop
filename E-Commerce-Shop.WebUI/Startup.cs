@@ -84,7 +84,7 @@ namespace E_Commerce_Shop.WebUI
             services.AddScoped<IProductService, ProductManager>();
             services.AddControllersWithViews();
         }
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
         {
             app.UseStaticFiles();
             app.UseStaticFiles(new StaticFileOptions
@@ -100,6 +100,7 @@ namespace E_Commerce_Shop.WebUI
                 app.UseDeveloperExceptionPage();
             }
 
+
             app.UseAuthentication();
 
             app.UseRouting();
@@ -108,16 +109,35 @@ namespace E_Commerce_Shop.WebUI
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                name: "adminuserlist",
+                pattern: "adminuser/users",
+                 defaults: new
+                 {
+                     controller = "AdminUser",
+                     action = "UserList"
+                 }
+                );
+                endpoints.MapControllerRoute(
+                name: "adminuseredit",
+                pattern: "adminuser/users/{id?}",
+                 defaults: new
+                 {
+                     controller = "AdminUser",
+                     action = "UserEdit"
+                 }
+                );
 
-             endpoints.MapControllerRoute(
-                  name: "accountaccessdenied",
-                  pattern: "account/accessdenied",
-                   defaults: new
-                   {
-                       controller = "Account",
-                       action = "AccessDenied"
-                   }
-              );   
+                endpoints.MapControllerRoute(
+                     name: "accountaccessdenied",
+                     pattern: "account/accessdenied",
+                      defaults: new
+                      {
+                          controller = "Account",
+                          action = "AccessDenied"
+                      }
+                 );
+
                 endpoints.MapControllerRoute(
                   name: "adminrolelist",
                   pattern: "adminrole/roles",
@@ -128,25 +148,25 @@ namespace E_Commerce_Shop.WebUI
                    }
               );
 
-              endpoints.MapControllerRoute(
-                  name: "adminrolecreate",
-                  pattern: "adminrole/rolecreate",
-                   defaults: new
-                   {
-                       controller = "AdminRole",
-                       action = "RoleCreate"
-                   }
-              );
-              //adminrole/roles/1 =>adminrole/edit/1
-              endpoints.MapControllerRoute(
-                  name: "adminroleedit",
-                  pattern: "adminrole/roles/{id?}",
-                   defaults: new
-                   {
-                       controller = "AdminRole",
-                       action = "RoleEdit"
-                   }
-              );
+                endpoints.MapControllerRoute(
+                    name: "adminrolecreate",
+                    pattern: "adminrole/rolecreate",
+                     defaults: new
+                     {
+                         controller = "AdminRole",
+                         action = "RoleCreate"
+                     }
+                );
+                //adminrole/roles/1 =>adminrole/edit/1
+                endpoints.MapControllerRoute(
+                    name: "adminroleedit",
+                    pattern: "adminrole/roles/{id?}",
+                     defaults: new
+                     {
+                         controller = "AdminRole",
+                         action = "RoleEdit"
+                     }
+                );
                 //admin/categories
                 endpoints.MapControllerRoute(
                   name: "admincategorylist",
@@ -224,6 +244,9 @@ namespace E_Commerce_Shop.WebUI
                     pattern: "{controller=Home}/{action=Index}/{id?}"
                 );
             });
+            
+            SeedIdentity.Seed(userManager, roleManager, configuration).Wait();
+
         }
     }
 }

@@ -16,7 +16,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace E_Commerce_Shop.WebUI.Controllers
 {
-    [Authorize(Roles = "admin")]
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private readonly IProductService _productService;
