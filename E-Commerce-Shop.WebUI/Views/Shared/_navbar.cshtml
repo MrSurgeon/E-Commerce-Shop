@@ -9,12 +9,12 @@
                 @if (User.Identity.IsAuthenticated)
                 {
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Card</a>
+                        <a class="nav-link" href="/card">Card</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Orders</a>
                     </li>
-                    @if (User.IsInRole("admin"))
+                    @if (User.IsInRole("Admin"))
                     {
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Admin" asp-action="ProductList">Admin Products</a>

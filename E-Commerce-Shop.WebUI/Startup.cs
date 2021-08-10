@@ -78,8 +78,10 @@ namespace E_Commerce_Shop.WebUI
 
             services.AddScoped<IEmailSender, EmailSender>();
 
+            services.AddScoped<ICardRepository, EfCoreCardRepository>();
             services.AddScoped<IProductRepository, EfCoreProductRepository>();
             services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
+            services.AddScoped<ICardService, CardManager>();
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<IProductService, ProductManager>();
             services.AddControllersWithViews();
@@ -109,6 +111,27 @@ namespace E_Commerce_Shop.WebUI
 
             app.UseEndpoints(endpoints =>
             {
+                //card Controller
+                endpoints.MapControllerRoute(
+                name: "addToCard",
+                pattern: "card",
+                 defaults: new
+                 {
+                     controller = "Card",
+                     action = "Index"
+                 }
+                );
+
+                endpoints.MapControllerRoute(
+                name: "addToCard",
+                pattern: "card/addtocard",
+                 defaults: new
+                 {
+                     controller = "Card",
+                     action = "AddToCard"
+                 }
+                );
+                //adminuser Controller
                 endpoints.MapControllerRoute(
                 name: "adminuserlist",
                 pattern: "adminuser/users",
@@ -127,7 +150,7 @@ namespace E_Commerce_Shop.WebUI
                      action = "UserEdit"
                  }
                 );
-
+                //account controller
                 endpoints.MapControllerRoute(
                      name: "accountaccessdenied",
                      pattern: "account/accessdenied",
@@ -137,7 +160,7 @@ namespace E_Commerce_Shop.WebUI
                           action = "AccessDenied"
                       }
                  );
-
+                //adminrole controller
                 endpoints.MapControllerRoute(
                   name: "adminrolelist",
                   pattern: "adminrole/roles",
@@ -244,7 +267,7 @@ namespace E_Commerce_Shop.WebUI
                     pattern: "{controller=Home}/{action=Index}/{id?}"
                 );
             });
-            
+
             SeedIdentity.Seed(userManager, roleManager, configuration).Wait();
 
         }

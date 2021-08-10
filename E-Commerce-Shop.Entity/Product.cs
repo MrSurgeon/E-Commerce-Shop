@@ -14,5 +14,6 @@ namespace E_Commerce_Shop.Entity
         public bool IsHome { get; set; }
 
         public List<ProductCategory> ProductCategories { get; set; }
+        public List<CardItem> CardItems { get; set; }
     }
 }
