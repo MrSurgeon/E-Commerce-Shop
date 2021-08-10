@@ -10,8 +10,21 @@
         </small>
     </div>
     <div class="card-footer text-center">
-        <a href="/@Model.Url" class="btn btn-primary btn-sm">İncele</a>
-        <a asp-controller="Shop" asp-action="AddToCard" asp-route-id="@Model.ProductId"
-            class="btn btn-primary btn-sm">Add To Card</a>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a href="/@Model.Url" class="btn btn-primary btn-sm">İncele</a>
+
+            <form action="/Card/AddToCard" method="POST" style="display: inline;">
+                <input type="hidden" name="productId" value="@Model.ProductId">
+                <input type="hidden" name="quantity" value="1">
+                <button class="btn btn-primary btn-sm" type="submit">
+                    Add To Card
+                </button>
+            </form>
+        }
+        else
+        {
+            <a href="/@Model.Url" class="btn btn-primary">İncele</a>
+        }
     </div>
 </div>

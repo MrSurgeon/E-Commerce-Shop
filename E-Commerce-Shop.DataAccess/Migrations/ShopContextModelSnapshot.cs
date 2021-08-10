@@ -17,6 +17,44 @@ namespace E_Commerce_Shop.DataAccess.Migrations
                 .HasAnnotation("ProductVersion", "3.1.17")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("E_Commerce_Shop.Entity.Card", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cards");
+                });
+
+            modelBuilder.Entity("E_Commerce_Shop.Entity.CardItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("CardId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CardId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("CardItems");
+                });
+
             modelBuilder.Entity("E_Commerce_Shop.Entity.Category", b =>
                 {
                     b.Property<int>("CategoryId")
@@ -79,6 +117,21 @@ namespace E_Commerce_Shop.DataAccess.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductCategories");
+                });
+
+            modelBuilder.Entity("E_Commerce_Shop.Entity.CardItem", b =>
+                {
+                    b.HasOne("E_Commerce_Shop.Entity.Card", "Card")
+                        .WithMany("CardItems")
+                        .HasForeignKey("CardId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("E_Commerce_Shop.Entity.Product", "Product")
+                        .WithMany("CardItems")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("E_Commerce_Shop.Entity.ProductCategory", b =>

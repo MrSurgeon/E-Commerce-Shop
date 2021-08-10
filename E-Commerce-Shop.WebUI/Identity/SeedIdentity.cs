@@ -14,15 +14,12 @@ namespace E_Commerce_Shop.WebUI.Identity
             var userName = configuration["Data:AdminUser:username"];
             var email = configuration["Data:AdminUser:email"];
             var password = configuration["Data:AdminUser:password"];
-
-
-            Console.WriteLine($"{userName} {email} {password}");
-            await roleManager.CreateAsync(new IdentityRole()
-            {
-                Name = "Admin"
-            });
             if (await userManager.FindByNameAsync("Admin") == null)
             {
+                await roleManager.CreateAsync(new IdentityRole()
+                {
+                    Name = "Admin"
+                });
                 var user = new User()
                 {
                     UserName = userName,

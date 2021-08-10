@@ -14424,6 +14424,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Card\\Index.cshtml",
+      "TargetPath": "Views\\Card\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Product\\index.cshtml",
       "TargetPath": "Views\\Product\\index.cshtml",
       "FileKind": "mvc"

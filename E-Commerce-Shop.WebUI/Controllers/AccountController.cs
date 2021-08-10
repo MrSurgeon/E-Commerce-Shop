@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using E_Commerce_Shop.Business.Abstract;
 using E_Commerce_Shop.Services.EmailService;
 using E_Commerce_Shop.WebUI.Extensions;
 using E_Commerce_Shop.WebUI.Helpers;
@@ -12,14 +13,16 @@ namespace E_Commerce_Shop.WebUI.Controllers
 
     public class AccountController : Controller
     {
+        private readonly ICardService _cardService;
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IEmailSender _emailSender;
-        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, IEmailSender emailSender)
+        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, IEmailSender emailSender, ICardService cardService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
+            _cardService = cardService;
         }
 
         [HttpGet]
@@ -115,6 +118,9 @@ namespace E_Commerce_Shop.WebUI.Controllers
                 var result = await _userManager.ConfirmEmailAsync(user, token);
                 if (result.Succeeded)
                 {
+                    //Card Objesini Oluştur
+                    _cardService.Create(user.Id);
+                    
                     TempData.Put<AlertMessage>("message", new AlertMessage()
                     {
                         Title = "Başarı",
@@ -192,7 +198,7 @@ namespace E_Commerce_Shop.WebUI.Controllers
             }
             return Redirect("~/");
         }
-         public IActionResult AccessDenied()
+        public IActionResult AccessDenied()
         {
             return View();
         }
