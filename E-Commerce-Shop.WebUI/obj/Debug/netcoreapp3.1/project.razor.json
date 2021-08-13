@@ -14424,8 +14424,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Card\\Index.cshtml",
-      "TargetPath": "Views\\Card\\Index.cshtml",
+      "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Card\\CardList.cshtml",
+      "TargetPath": "Views\\Card\\CardList.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14494,8 +14494,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Order\\Orders.cshtml",
+      "TargetPath": "Views\\Order\\Orders.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Admin\\EditProduct.cshtml",
       "TargetPath": "Views\\Admin\\EditProduct.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Card\\Checkout.cshtml",
+      "TargetPath": "Views\\Card\\Checkout.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14536,6 +14546,11 @@
     {
       "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Home\\myView.cshtml",
       "TargetPath": "Views\\Home\\myView.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\Views\\Card\\SuccessPayment.cshtml",
+      "TargetPath": "Views\\Card\\SuccessPayment.cshtml",
       "FileKind": "mvc"
     },
     {

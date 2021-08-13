@@ -96,8 +96,15 @@ using E_Commerce_Shop.WebUI.ViewModels.Card;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 14 "C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\Views\_ViewImports.cshtml"
+using E_Commerce_Shop.WebUI.ViewModels.Order;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d50a6a3961ca03ea59fc5a3ae541d90086dd38b3", @"/Views/AdminRole/RoleList.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"91dfc2bb1768d3e03313ddb4f4f9adcfb52e6f3d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f1e5de54e3b072108b16f44b4b43369e1c615e14", @"/Views/_ViewImports.cshtml")]
     public class Views_AdminRole_RoleList : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<IdentityRole>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "RoleCreate", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -132,7 +139,7 @@ using E_Commerce_Shop.WebUI.ViewModels.Card;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("\r\n<div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n        <h2>\r\n            Admin Category List\r\n        </h2>\r\n        <hr>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d50a6a3961ca03ea59fc5a3ae541d90086dd38b37491", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d50a6a3961ca03ea59fc5a3ae541d90086dd38b37715", async() => {
                 WriteLiteral("Add Role");
             }
             );
@@ -203,7 +210,7 @@ WriteAttributeValue("", 893, item.Id, 893, 8, false);
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(" class=\"btn btn-primary btn-sm\">Edit</a>\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d50a6a3961ca03ea59fc5a3ae541d90086dd38b310845", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d50a6a3961ca03ea59fc5a3ae541d90086dd38b311069", async() => {
                 WriteLiteral("\r\n                                    <input type=\"hidden\" name=\"id\"");
                 BeginWriteAttribute("value", " value=\"", 1126, "\"", 1142, 1);
 #nullable restore

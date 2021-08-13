@@ -38,6 +38,10 @@ namespace E_Commerce_Shop.WebUI.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
+            if(User.Identity.IsAuthenticated)
+            {
+                return Redirect("/");
+            }
             if (!ModelState.IsValid)
                 return View(model);
             var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, false, false);

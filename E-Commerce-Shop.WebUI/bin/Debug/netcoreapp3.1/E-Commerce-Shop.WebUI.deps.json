@@ -28,6 +28,7 @@
           "E-Commerce-Shop.DataAccess": "1.0.0",
           "E-Commerce-Shop.Entity": "1.0.0",
           "E-Commerce-Shop.Services": "1.0.0",
+          "Iyzipay": "2.1.39",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.17",
           "Microsoft.EntityFrameworkCore.Design": "3.1.17",
           "Newtonsoft.Json": "13.0.1",
@@ -303,6 +304,20 @@
         },
         "compile": {
           "E-Commerce-Shop.WebUI.dll": {}
+        }
+      },
+      "Iyzipay/2.1.39": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Iyzipay.dll": {
+            "assemblyVersion": "2.1.39.0",
+            "fileVersion": "2.1.39.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Iyzipay.dll": {}
         }
       },
       "MailKit/2.6.0": {
@@ -2895,6 +2910,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Iyzipay/2.1.39": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-e3NdsIBQuEWMfPHY5hqIorHqP5tldHwNSztdxwKKVgUe/ajtGlYFTthfdMARk4mkHkclvTsz4DI/V7xs3xJwJg==",
+      "path": "iyzipay/2.1.39",
+      "hashPath": "iyzipay.2.1.39.nupkg.sha512"
     },
     "MailKit/2.6.0": {
       "type": "package",

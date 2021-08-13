@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "RMyw8aSDViYwsbm/57g1Y+I3xXETikkr//ZIgPazAhOKgn8CAab/C3AOHbSM+BrhehKVn3QOiYGMRi326EEHMw==",
+  "dgSpecHash": "uOfzsdHY8iBxaLuKVFgLkv66l+wuE/x5FBnUzwHELZVd0SUMBhKq7mr0Fe9H5stm4kpcnbtAwerAG66rtw7+2g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\E-Commerce-Shop.WebUI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Tarık\\.nuget\\packages\\iyzipay\\2.1.39\\iyzipay.2.1.39.nupkg.sha512",
     "C:\\Users\\Tarık\\.nuget\\packages\\mailkit\\2.6.0\\mailkit.2.6.0.nupkg.sha512",
     "C:\\Users\\Tarık\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.17\\microsoft.aspnetcore.cryptography.internal.3.1.17.nupkg.sha512",
     "C:\\Users\\Tarık\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.17\\microsoft.aspnetcore.cryptography.keyderivation.3.1.17.nupkg.sha512",

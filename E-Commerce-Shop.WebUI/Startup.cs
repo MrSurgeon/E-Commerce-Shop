@@ -78,12 +78,15 @@ namespace E_Commerce_Shop.WebUI
 
             services.AddScoped<IEmailSender, EmailSender>();
 
+            services.AddScoped<IOrderRepository, EfCoreOrderRepository>();
             services.AddScoped<ICardRepository, EfCoreCardRepository>();
             services.AddScoped<IProductRepository, EfCoreProductRepository>();
             services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
             services.AddScoped<ICardService, CardManager>();
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<IProductService, ProductManager>();
+            services.AddScoped<IOrderService, OrderManager>();
+
             services.AddControllersWithViews();
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
@@ -111,20 +114,51 @@ namespace E_Commerce_Shop.WebUI
 
             app.UseEndpoints(endpoints =>
             {
-                //card Controller
+                //order Controller
                 endpoints.MapControllerRoute(
-                name: "addToCard",
-                pattern: "card",
+                name: "orderList",
+                pattern: "orders",
+                    defaults: new
+                    {
+                        controller = "Order",
+                        action = "OrderList"
+                    }
+                );
+
+                // card Controller
+                endpoints.MapControllerRoute(
+                name: "deletefromcard",
+                pattern: "card/deletefromcard",
+                    defaults: new
+                    {
+                        controller = "Card",
+                        action = "DeleteFromCard"
+                    }
+                );
+
+                endpoints.MapControllerRoute(
+                name: "checkout",
+                pattern: "card/checkout",
+                    defaults: new
+                    {
+                        controller = "Card",
+                        action = "Checkout"
+                    }
+                );
+
+                endpoints.MapControllerRoute(
+                name: "cardList",
+                pattern: "cardList",
                  defaults: new
                  {
                      controller = "Card",
-                     action = "Index"
+                     action = "CardList"
                  }
                 );
 
                 endpoints.MapControllerRoute(
                 name: "addToCard",
-                pattern: "card/addtocard",
+                pattern: "addtocard",
                  defaults: new
                  {
                      controller = "Card",

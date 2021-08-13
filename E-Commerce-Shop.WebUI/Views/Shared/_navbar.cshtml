@@ -9,10 +9,10 @@
                 @if (User.Identity.IsAuthenticated)
                 {
                     <li class="nav-item">
-                        <a class="nav-link" href="/card">Card</a>
+                        <a class="nav-link" href="/cardList">Card</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Orders</a>
+                        <a class="nav-link" href="/orders">Orders</a>
                     </li>
                     @if (User.IsInRole("Admin"))
                     {

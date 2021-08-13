@@ -1,0 +1,96 @@
+@model OrderModel
+
+<h1 class="h3">Checkout</h1>
+<hr>
+<form method="POST" action="/card/checkout" class="mb-3">
+    <div class="row">
+
+        <div class="col-md-8">
+            <h4 class="mb-3">Order Details</h4>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" asp-for="FirstName" placeholder="First name">
+                </div>
+                <div class="col-md-6">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" asp-for="LastName" id="lastName" placeholder="Last name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+
+                    <label for="address">Address</label>
+                    <textarea class="form-control" asp-for="Address" id="address"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" asp-for="City" id="city">
+                </div>
+                <div class="col-md-4">
+                    <label for="phone">Phone</label>
+                    <input type="text" class="form-control" asp-for="Phone" id="phone">
+                </div>
+                <div class="col-md-4">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" asp-for="Email" id="email">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h4 class="mb-3">Sales Summary</h4>
+            <hr>
+            <ul class="list-group list-group-flush">
+                @foreach (var item in Model.CardModel.CardItems)
+                {
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <h6>@item.ProductName</h6>
+                            <span class="text-muted">Quantity: @item.Quantity</span>
+                        </div>
+                        <span class="text-muted">@item.Price</span>
+                    </li>
+                }
+
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Toplam: (TL)</span>
+                    <span class="text-muted">@Model.CardModel.TotalPrice().ToString("c")</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <h4 class="my-3">Card Details</h4>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="cardName">Card Name</label>
+                    <input type="text" class="form-control" id="cardName" asp-for="CardName">
+                </div>
+                <div class="col-md-6">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" class="form-control" id="cardNumber" asp-for="CardNumber">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="expirationMonth">Expiration Month</label>
+                    <input type="text" class="form-control" id="expirationMonth" asp-for="ExpirationMonth">
+                </div>
+                <div class="col-md-4">
+                    <label for="expirationYear">Expiration Year</label>
+                    <input type="text" class="form-control" id="expirationYear" asp-for="ExpirationYear">
+                </div>
+                <div class="col-md-4">
+                    <label for="cvc">Cvc</label>
+                    <input type="text" class="form-control" id="cvc" asp-for="Cvc">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block my-3">Confirm The Checkout</button>
+        </div>
+    </div>
+</form>

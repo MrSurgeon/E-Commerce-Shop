@@ -1,24 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>E_Commerce_Shop.WebUI</RootNamespace>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.17" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.17"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.17">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.6" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.6"/>
+    <PackageReference Include="Iyzipay" Version="2.1.39"/>
   </ItemGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\E-Commerce-Shop.Entity\E-Commerce-Shop.Entity.csproj" />
-    <ProjectReference Include="..\E-Commerce-Shop.Business\E-Commerce-Shop.Business.csproj" />
-    <ProjectReference Include="..\E-Commerce-Shop.DataAccess\E-Commerce-Shop.DataAccess.csproj" />
-    <ProjectReference Include="..\E-Commerce-Shop.Services\E-Commerce-Shop.Services.csproj" />
+    <ProjectReference Include="..\E-Commerce-Shop.Entity\E-Commerce-Shop.Entity.csproj"/>
+    <ProjectReference Include="..\E-Commerce-Shop.Business\E-Commerce-Shop.Business.csproj"/>
+    <ProjectReference Include="..\E-Commerce-Shop.DataAccess\E-Commerce-Shop.DataAccess.csproj"/>
+    <ProjectReference Include="..\E-Commerce-Shop.Services\E-Commerce-Shop.Services.csproj"/>
   </ItemGroup>
 </Project>

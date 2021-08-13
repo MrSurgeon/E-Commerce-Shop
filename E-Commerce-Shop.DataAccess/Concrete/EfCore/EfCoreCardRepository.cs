@@ -7,6 +7,15 @@ namespace E_Commerce_Shop.DataAccess.Concrete.EfCore
 {
     public class EfCoreCardRepository : EfCoreGenericRepository<Card, ShopContext>, ICardRepository
     {
+        public void ClearCart(int cartId)
+        {
+            using (var db = new ShopContext())
+            {
+                var cmd = @"Delete From CardItems Where CardId=@p0";
+                db.Database.ExecuteSqlRaw(cmd, cartId);
+            }
+        }
+
         public void DeleteFromCart(int cardId, int productId)
         {
             using (var db = new ShopContext())

@@ -1,0 +1,84 @@
+@model CardViewModel
+
+<h1 class="h3">Shopping Card</h1>
+<div class="row">
+    @if (Model.CardItems.Count > 0)
+    {
+        <div class="col-md-8">
+            <div class="text-left">
+                <h4>Card Items</h4>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var i in Model.CardItems)
+                    {
+                        <tr>
+                            <td>
+                                <img src="~/images/@i.ImageUrl" width="80" />
+                            </td>
+                            <td>@i.ProductName</td>
+                            <td>@i.Price</td>
+                            <td>@i.Quantity</td>
+                            <td>@(i.Quantity*i.Price)</td>
+                            <td>
+                                <form action="/card/deletefromcard" method="POST">
+                                    <input type="hidden" name="productId" value="@i.ProductId">
+                                    <button class="btn btn-danger btn-sm">
+                                        <i class="fas fa-times-circle fa-lg"></i>
+                                    </button>
+                                </form>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <div class="text-left">
+                <h4>Card Summary</h4>
+            </div>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>Total Price of Items</th>
+                    </tr>
+                    <tr>
+                        <td>@Model.TotalPrice().ToString("c")</td>
+                    </tr>
+                    <tr>
+                        <th>Shipping Price</th>
+                        <td>Free</td>
+                    </tr>
+                    <tr>
+                        <th>Total Shopping Price</th>
+                        <td>@Model.TotalPrice().ToString("c")</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-center mb-3">
+                <a href="/" class="btn btn-primary ">Check-In</a>
+                <a href="/card/checkout" class="btn btn-primary">Check-Out</a>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="col-md-12">
+            <div class="alert alert-danger" role="alert">
+                Your shipping cart is empty
+            </div>
+        </div>
+    }
+
+</div>
