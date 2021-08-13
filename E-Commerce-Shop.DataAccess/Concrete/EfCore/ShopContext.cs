@@ -5,6 +5,9 @@ namespace E_Commerce_Shop.DataAccess.Concrete.EfCore
 {
     public class ShopContext : DbContext
     {
+        public ShopContext(DbContextOptions options) : base(options)
+        {
+        }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Card> Cards { get; set; }
@@ -13,10 +16,10 @@ namespace E_Commerce_Shop.DataAccess.Concrete.EfCore
         public DbSet<OrderItem> OrderItems { get; set; }
 
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseMySql("Server=localhost; Port=3306; Database=ShopDb; Uid=root; Pwd=root;");
-        }
+        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        // {
+        //     optionsBuilder.UseMySql("Server=localhost; Port=3306; Database=ShopDb; Uid=root; Pwd=root;");
+        // }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

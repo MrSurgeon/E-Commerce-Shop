@@ -9,23 +9,23 @@ namespace E_Commerce_Shop.DataAccess.DataSeed
     {
         public static void Seed()
         {
-            using (var context = new ShopContext())
-            {
-                if (context.Database.GetPendingMigrations().Count() == 0)
-                {
-                    if (context.Categories.Count() == 0)
-                    {
-                        context.Categories.AddRange(Categories);
+            // using (var context = new ShopContext())
+            // {
+            //     if (context.Database.GetPendingMigrations().Count() == 0)
+            //     {
+            //         if (context.Categories.Count() == 0)
+            //         {
+            //             context.Categories.AddRange(Categories);
 
-                    }
-                    if (context.Products.Count() == 0)
-                    {
-                        context.Products.AddRange(Products);
-                        context.AddRange(ProductsCategories);
-                    }
-                }
-                context.SaveChanges();
-            }
+            //         }
+            //         if (context.Products.Count() == 0)
+            //         {
+            //             context.Products.AddRange(Products);
+            //             context.AddRange(ProductsCategories);
+            //         }
+            //     }
+            //     context.SaveChanges();
+            // }
         }
         private static Category[] Categories =
         {

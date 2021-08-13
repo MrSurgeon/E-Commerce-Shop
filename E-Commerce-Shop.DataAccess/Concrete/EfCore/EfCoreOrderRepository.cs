@@ -6,23 +6,32 @@ using Microsoft.EntityFrameworkCore;
 
 namespace E_Commerce_Shop.DataAccess.Concrete.EfCore
 {
-    public class EfCoreOrderRepository : EfCoreGenericRepository<Order, ShopContext>, IOrderRepository
+    public class EfCoreOrderRepository : EfCoreGenericRepository<Order>, IOrderRepository
     {
+        public EfCoreOrderRepository(ShopContext context) : base(context)
+        {
+        }
+        private ShopContext ShopContext
+        {
+            get
+            {
+                return _context as ShopContext;
+            }
+        }
         public List<Order> GetGetOrderWithItemsByUserId(string userId)
         {
-            using (var db = new ShopContext())
-            {
-                var orders = db.Orders
-                                .Include(o => o.OrderItems)
-                                .ThenInclude(oT => oT.Product)
-                                .AsQueryable();
 
-                if (!string.IsNullOrEmpty("userId"))
-                {
-                    return orders.Where(w=>w.UserId==userId).ToList();
-                }
-                return orders.ToList();
+            var orders = ShopContext.Orders
+                            .Include(o => o.OrderItems)
+                            .ThenInclude(oT => oT.Product)
+                            .AsQueryable();
+
+            if (!string.IsNullOrEmpty("userId"))
+            {
+                return orders.Where(w => w.UserId == userId).ToList();
             }
+            return orders.ToList();
+
         }
     }
 }

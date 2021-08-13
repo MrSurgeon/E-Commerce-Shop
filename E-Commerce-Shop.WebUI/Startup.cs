@@ -31,7 +31,9 @@ namespace E_Commerce_Shop.WebUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationContext>(opt =>
-            opt.UseMySql("Server = localhost; Port = 3306; Database = ShopDb; Uid = root; Pwd = root; "));
+            opt.UseMySql(_configuration.GetConnectionString("MySqlConnection")));
+            services.AddDbContext<ShopContext>(opt =>
+            opt.UseMySql(_configuration.GetConnectionString("MySqlConnection")));
             services.AddIdentity<User, IdentityRole>()
                     .AddEntityFrameworkStores<ApplicationContext>()
                     .AddDefaultTokenProviders();

@@ -5,27 +5,33 @@ using Microsoft.EntityFrameworkCore;
 
 namespace E_Commerce_Shop.DataAccess.Concrete.EfCore
 {
-    public class EfCoreCategoryRepository : EfCoreGenericRepository<Category, ShopContext>, ICategoryRepository
+    public class EfCoreCategoryRepository : EfCoreGenericRepository<Category>, ICategoryRepository
     {
+        public EfCoreCategoryRepository(ShopContext context) : base(context)
+        {
+        }
+        private ShopContext ShopContext
+        {
+            get
+            {
+                return _context as ShopContext;
+            }
+        }
         public void DeleteProductFromCategory(int productId, int categoryId)
         {
-            using (var db = new ShopContext())
-            {
-                var cmd = "Delete From productcategories Where ProductId=@p0 And CategoryId=@p1";
-                db.Database.ExecuteSqlRaw(cmd, productId, categoryId);
-            }
+
+            var cmd = "Delete From productcategories Where ProductId=@p0 And CategoryId=@p1";
+            ShopContext.Database.ExecuteSqlRaw(cmd, productId, categoryId);
+
         }
 
         public Category GetByIdWithProducts(int id)
         {
-            using (var db = new ShopContext())
-            {
-                return db.Categories
-                         .Where(w => w.CategoryId == id)
-                         .Include(c => c.ProductCategories)
-                         .ThenInclude(cP => cP.Product)
-                         .FirstOrDefault();
-            }
+            return ShopContext.Categories
+                     .Where(w => w.CategoryId == id)
+                     .Include(c => c.ProductCategories)
+                     .ThenInclude(cP => cP.Product)
+                     .FirstOrDefault();
         }
     }
 }
