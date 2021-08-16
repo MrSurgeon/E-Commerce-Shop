@@ -18,13 +18,11 @@ namespace E_Commerce_Shop.DataAccess.Concrete.EfCore
         public void Create(TEntity entity)
         {
             _context.Set<TEntity>().Add(entity);
-            _context.SaveChanges();
         }
 
         public void Delete(TEntity entity)
         {
             _context.Set<TEntity>().Remove(entity);
-            _context.SaveChanges();
         }
 
         public List<TEntity> GetAll()
@@ -39,8 +37,6 @@ namespace E_Commerce_Shop.DataAccess.Concrete.EfCore
         public virtual void Update(TEntity entity)
         {
             _context.Entry(entity).State = EntityState.Modified;
-            _context.SaveChanges();
-
         }
     }
 }

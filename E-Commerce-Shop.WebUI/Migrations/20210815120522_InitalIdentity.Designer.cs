@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_Commerce_Shop.WebUI.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20210803100352_AddIdentity")]
-    partial class AddIdentity
+    [Migration("20210815120522_InitalIdentity")]
+    partial class InitalIdentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

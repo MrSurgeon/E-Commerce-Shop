@@ -6,17 +6,16 @@ namespace E_Commerce_Shop.Business.Concrete
 {
     public class CardManager : ICardService
     {
-        private readonly ICardRepository _cardRepository;
-        private readonly IProductRepository _productRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public CardManager(ICardRepository cardRepository, IProductRepository productRepository)
+        public CardManager(IUnitOfWork unitOfWork)
         {
-            _cardRepository = cardRepository;
-            _productRepository = productRepository;
+            _unitOfWork = unitOfWork;
         }
+
         public bool AddToCard(string userId, int? productId, int? quantity)
         {
-            var card = _cardRepository.GetCardWithItemsAndProductByUserId(userId);
+            var card = _unitOfWork.Cards.GetCardWithItemsAndProductByUserId(userId);
 
             if (IsValidation(card))
             {
@@ -25,7 +24,7 @@ namespace E_Commerce_Shop.Business.Concrete
                     ErrorMessage += "Satın alınmak istenen ürün hakkında sorun oluştu. Tekrar deneyiniz";
                     return false;
                 }
-                if (_productRepository.GetById((int)productId) == null)
+                if (_unitOfWork.Products.GetById((int)productId) == null)
                 {
                     ErrorMessage += "Satın alınmak istenen ürün bulunamadı. Tekrar deneyiniz";
                     return false;
@@ -52,7 +51,8 @@ namespace E_Commerce_Shop.Business.Concrete
                     Quantity = (int)quantity
                 });
             }
-            _cardRepository.Update(card);
+            _unitOfWork.Cards.Update(card);
+            _unitOfWork.Save();
 
             return true;
         }
@@ -60,22 +60,25 @@ namespace E_Commerce_Shop.Business.Concrete
         public void Create(string userId)
         {
             //İş kuralları veya Validator işlemlerini bu kısımda ekleyebilirsin. 
-            _cardRepository.Create(new Card()
+            _unitOfWork.Cards.Create(new Card()
             {
                 UserId = userId
             });
+            _unitOfWork.Save();
         }
 
         public void DeleteFromCart(string userId, int productId)
         {
-            var card = _cardRepository.GetCardWithItemsAndProductByUserId(userId);
-            _cardRepository.DeleteFromCart(card.Id, productId);
+            var card = _unitOfWork.Cards.GetCardWithItemsAndProductByUserId(userId);
+            _unitOfWork.Cards.DeleteFromCart(card.Id, productId);
+
+            _unitOfWork.Save();
         }
 
         public Card GetCardWithItemsAndProductByUserId(string userId)
         {
             //İş kuralları
-            return _cardRepository.GetCardWithItemsAndProductByUserId(userId);
+            return _unitOfWork.Cards.GetCardWithItemsAndProductByUserId(userId);
         }
 
         public string ErrorMessage { get; set; }
@@ -88,7 +91,8 @@ namespace E_Commerce_Shop.Business.Concrete
 
         public void ClearCard(int cartId)
         {
-            _cardRepository.ClearCart(cartId);
+            _unitOfWork.Cards.ClearCart(cartId);
+            _unitOfWork.Save();
         }
     }
 }

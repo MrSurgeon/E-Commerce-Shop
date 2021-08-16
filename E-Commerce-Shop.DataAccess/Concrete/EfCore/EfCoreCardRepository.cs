@@ -40,7 +40,6 @@ namespace E_Commerce_Shop.DataAccess.Concrete.EfCore
         public override void Update(Card entity)
         {
             ShopContext.Cards.Update(entity);
-            ShopContext.SaveChanges();
         }
 
 

@@ -1,3 +1,5 @@
+using E_Commerce_Shop.DataAccess.Configurations;
+using E_Commerce_Shop.DataAccess.Extensions;
 using E_Commerce_Shop.Entity;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,22 +25,9 @@ namespace E_Commerce_Shop.DataAccess.Concrete.EfCore
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ProductCategory>()
-                        .ToTable("ProductCategories")
-                        .HasKey(k => new
-                        {
-                            k.CategoryId,
-                            k.ProductId
-                        });
-            modelBuilder.Entity<ProductCategory>()
-            .HasOne(pc => pc.Product)
-            .WithMany(p => p.ProductCategories)
-            .HasForeignKey(pc => pc.ProductId);
-
-            modelBuilder.Entity<ProductCategory>()
-            .HasOne(pc => pc.Category)
-            .WithMany(c => c.ProductCategories)
-            .HasForeignKey(pc => pc.CategoryId);
+            modelBuilder.ApplyConfiguration(new ProductConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductCategoryConfiguration());
+            modelBuilder.SeedData();
         }
     }
 }

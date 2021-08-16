@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace E_Commerce_Shop.WebUI.Migrations
 {
-    public partial class AddIdentity : Migration
+    public partial class InitalIdentity : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

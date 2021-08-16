@@ -11,7 +11,6 @@ namespace E_Commerce_Shop.DataAccess.Concrete.EfCore
     {
         public EfCoreProductRepository(ShopContext context) : base(context)
         {
-
         }
         private ShopContext ShopContext
         {
@@ -111,7 +110,6 @@ namespace E_Commerce_Shop.DataAccess.Concrete.EfCore
                     CategoryId = cakid
                 }).ToList();
             }
-            ShopContext.SaveChanges();
         }
     }
 }

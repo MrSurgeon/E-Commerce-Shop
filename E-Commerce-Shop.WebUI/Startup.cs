@@ -4,7 +4,6 @@ using E_Commerce_Shop.Business.Abstract;
 using E_Commerce_Shop.Business.Concrete;
 using E_Commerce_Shop.DataAccess.Abstract;
 using E_Commerce_Shop.DataAccess.Concrete.EfCore;
-using E_Commerce_Shop.DataAccess.DataSeed;
 using E_Commerce_Shop.Services.EmailService;
 using E_Commerce_Shop.WebUI.Identity;
 using Microsoft.AspNetCore.Builder;
@@ -22,12 +21,10 @@ namespace E_Commerce_Shop.WebUI
     public class Startup
     {
         private readonly IConfiguration _configuration;
-
         public Startup(IConfiguration configuration)
         {
             _configuration = configuration;
         }
-
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationContext>(opt =>
@@ -80,10 +77,8 @@ namespace E_Commerce_Shop.WebUI
 
             services.AddScoped<IEmailSender, EmailSender>();
 
-            services.AddScoped<IOrderRepository, EfCoreOrderRepository>();
-            services.AddScoped<ICardRepository, EfCoreCardRepository>();
-            services.AddScoped<IProductRepository, EfCoreProductRepository>();
-            services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
             services.AddScoped<ICardService, CardManager>();
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<IProductService, ProductManager>();
@@ -91,7 +86,7 @@ namespace E_Commerce_Shop.WebUI
 
             services.AddControllersWithViews();
         }
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<User> userManager, RoleManager<IdentityRole> roleManager, ICardService cardService, IConfiguration configuration)
         {
             app.UseStaticFiles();
             app.UseStaticFiles(new StaticFileOptions
@@ -103,7 +98,6 @@ namespace E_Commerce_Shop.WebUI
             });
             if (env.IsDevelopment())
             {
-                SeedDatabase.Seed();
                 app.UseDeveloperExceptionPage();
             }
 
@@ -304,7 +298,7 @@ namespace E_Commerce_Shop.WebUI
                 );
             });
 
-            SeedIdentity.Seed(userManager, roleManager, configuration).Wait();
+            SeedIdentity.Seed(userManager, roleManager, cardService, configuration).Wait();
 
         }
     }

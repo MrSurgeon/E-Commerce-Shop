@@ -1,5 +1,7 @@
 using System;
+using System.Linq;
 using System.Threading.Tasks;
+using E_Commerce_Shop.Business.Abstract;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 
@@ -8,35 +10,63 @@ namespace E_Commerce_Shop.WebUI.Identity
     public static class SeedIdentity
     {
 
-        public static async Task Seed(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
+        public static async Task Seed(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, ICardService cardService, IConfiguration configuration)
         {
-            // Oluştur (User + Role) ===> Ekle Database User + Ekle Database Role ==> Role Ekle User 
-            var userName = configuration["Data:AdminUser:username"];
-            var email = configuration["Data:AdminUser:email"];
-            var password = configuration["Data:AdminUser:password"];
-            if (await userManager.FindByNameAsync("Admin") == null)
+
+            var roles = configuration.GetSection("Data:Roles").GetChildren().Select(x => x.Value).ToArray();
+
+            foreach (var role in roles)
             {
-                await roleManager.CreateAsync(new IdentityRole()
+                if (!await roleManager.RoleExistsAsync(role))
                 {
-                    Name = "Admin"
-                });
-                var user = new User()
-                {
-                    UserName = userName,
-                    FirstName = "admin",
-                    LastName = "admin",
-                    EmailConfirmed = true,
-                    Email = email
-                };
-                var result = await userManager.CreateAsync(user, password);
-                if (result.Succeeded)
-                {
-                    Console.WriteLine("user kaydedildi");
-                    await userManager.AddToRoleAsync(user, "Admin");
+                    await roleManager.CreateAsync(new IdentityRole()
+                    {
+                        Name = role
+                    });
                 }
-                else
+            }
+
+            var users = configuration.GetSection("Data:Users").GetChildren();
+
+            foreach (var user in users)
+            {
+                var email = user.GetValue<string>("email");
+                if (await userManager.FindByEmailAsync(email) == null)
                 {
-                    Console.WriteLine("user kaydedilemedi");
+                    var username = user.GetValue<string>("username");
+                    var password = user.GetValue<string>("password");
+                    var firstname = user.GetValue<string>("firstname");
+                    var lastname = user.GetValue<string>("lastname");
+                    var role = user.GetValue<string>("role");
+
+                    var person = new User()
+                    {
+                        UserName = username,
+                        FirstName = firstname,
+                        LastName = lastname,
+                        EmailConfirmed = true,
+                        Email = email
+                    };
+                    var result = await userManager.CreateAsync(person, password);
+                    if (result.Succeeded)
+                    {
+                        Console.WriteLine("user kaydedildi");
+                        var roleResult = await userManager.AddToRoleAsync(person, role);
+                        if (!roleResult.Succeeded)
+                        {
+                            foreach (var error in result.Errors)
+                            {
+                                Console.WriteLine(error);
+                            }
+                        }
+                        cardService.Create(person.Id);
+                    }
+                    else
+                    {
+                        Console.WriteLine("user kaydedilemedi");
+                    }
+
+
                 }
             }
         }

@@ -7,28 +7,28 @@ namespace E_Commerce_Shop.Business.Concrete
 {
     public class ProductManager : IProductService
     {
-        private readonly IProductRepository _productRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-
-        public ProductManager(IProductRepository productRepository)
+        public ProductManager(IUnitOfWork unitOfWork)
         {
-            _productRepository = productRepository;
+            _unitOfWork = unitOfWork;
         }
         public Product GetById(int id)
         {
             //İş Kurallarını Oluştur
-            return _productRepository.GetById(id);
+            return _unitOfWork.Products.GetById(id);
         }
         public List<Product> GetAll()
         {
             //İş Kurallarını Oluştur
-            return _productRepository.GetAll();
+            return _unitOfWork.Products.GetAll();
         }
         public bool Create(Product entity)
         {
             if (IsValidation(entity))
             {
-                _productRepository.Create(entity);
+                _unitOfWork.Products.Create(entity);
+                _unitOfWork.Save();
                 return true;
             }
             return false;
@@ -37,8 +37,8 @@ namespace E_Commerce_Shop.Business.Concrete
         {
             if (IsValidation(entity))
             {
-
-                _productRepository.Update(entity);
+                _unitOfWork.Products.Update(entity);
+                _unitOfWork.Save();
                 return true;
             }
             return false;
@@ -47,7 +47,8 @@ namespace E_Commerce_Shop.Business.Concrete
         public void Delete(Product entity)
         {
             //İş Kurallarını Oluştur
-            _productRepository.Delete(entity);
+            _unitOfWork.Products.Delete(entity);
+            _unitOfWork.Save();
         }
 
         public List<Product> GetProductsByCategoryUrl(string url, int page, int pageSize)
@@ -61,35 +62,35 @@ namespace E_Commerce_Shop.Business.Concrete
             {
                 pageSize = 3;
             }
-            return _productRepository.GetProductsByCategoryUrl(url, page, pageSize);
+            return _unitOfWork.Products.GetProductsByCategoryUrl(url, page, pageSize);
         }
 
         public Product GetProductWithCategories(string url)
         {
             //İş Kurallarını Oluştur
-            return _productRepository.GetProductWithCategories(url);
+            return _unitOfWork.Products.GetProductWithCategories(url);
         }
 
         public int GetCountByCategory(string name)
         {
-            return _productRepository.GetCountByCategory(name);
+            return _unitOfWork.Products.GetCountByCategory(name);
         }
 
         public List<Product> GetHomePageProducts()
         {
             //İş Kuralları
-            return _productRepository.GetHomePageProducts();
+            return _unitOfWork.Products.GetHomePageProducts();
         }
 
         public List<Product> GetSearchResult(string searchValue)
         {
-            return _productRepository.GetSearchResult(searchValue);
+            return _unitOfWork.Products.GetSearchResult(searchValue);
         }
 
         public Product GetProductWithCategoriesByProductId(int productId)
         {
 
-            return _productRepository.GetProductWithCategoriesByProductId(productId);
+            return _unitOfWork.Products.GetProductWithCategoriesByProductId(productId);
         }
 
         public bool Update(Product product, int[] categoryIds)
@@ -101,7 +102,8 @@ namespace E_Commerce_Shop.Business.Concrete
                     ErrorMessage += "En az bir kategori alanı seçmelisiniz!";
                     return false;
                 }
-                _productRepository.Update(product, categoryIds);
+                _unitOfWork.Products.Update(product, categoryIds);
+                _unitOfWork.Save();
                 return true;
             }
             return false;

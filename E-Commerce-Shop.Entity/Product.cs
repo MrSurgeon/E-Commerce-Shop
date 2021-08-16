@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace E_Commerce_Shop.Entity
@@ -12,6 +13,7 @@ namespace E_Commerce_Shop.Entity
         public string ImageUrl { get; set; }
         public bool IsApproved { get; set; } = false;
         public bool IsHome { get; set; }
+        public DateTime DateOfAdd { get; set; }
 
         public List<ProductCategory> ProductCategories { get; set; }
         public List<CardItem> CardItems { get; set; }
