@@ -10,13 +10,8 @@ namespace E_Commerce_Shop.DataAccess.Concrete.EfCore
         public EfCoreCardRepository(ShopContext context) : base(context)
         {
         }
-        private ShopContext ShopContext
-        {
-            get
-            {
-                return _context as ShopContext;
-            }
-        }
+        private ShopContext ShopContext => _context as ShopContext;
+
         public void ClearCart(int cartId)
         {
             var cmd = @"Delete From CardItems Where CardId=@p0";

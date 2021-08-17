@@ -25,4 +25,4 @@ C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\obj\De
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\obj\Debug\netstandard2.0\E-Commerce-Shop.Business.csproj.CopyComplete
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\obj\Debug\netstandard2.0\E-Commerce-Shop.Business.dll
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\obj\Debug\netstandard2.0\E-Commerce-Shop.Business.pdb
-C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\obj\Debug\netstandard2.0\E-Commerce-Shop.Business.csprojAssemblyReference.cache
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Business\obj\Debug\netstandard2.0\E-Commerce-Shop.Business.csproj.AssemblyReference.cache

@@ -11,13 +11,8 @@ namespace E_Commerce_Shop.DataAccess.Concrete.EfCore
         public EfCoreOrderRepository(ShopContext context) : base(context)
         {
         }
-        private ShopContext ShopContext
-        {
-            get
-            {
-                return _context as ShopContext;
-            }
-        }
+        private ShopContext ShopContext => _context as ShopContext;
+
         public List<Order> GetGetOrderWithItemsByUserId(string userId)
         {
 

@@ -12,22 +12,13 @@ namespace E_Commerce_Shop.DataAccess.Concrete.EfCore
         public EfCoreProductRepository(ShopContext context) : base(context)
         {
         }
-        private ShopContext ShopContext
-        {
-            get
-            {
-                return _context as ShopContext;
-            }
-        }
-
+        private ShopContext ShopContext => _context as ShopContext;
         public int GetCountByCategory(string name)
         {
-
             var products = ShopContext
-                                    .Products
-                                    .Where(w => w.IsApproved)
-                                    .AsQueryable();
-
+                .Products
+                .Where(w => w.IsApproved)
+                .AsQueryable();
             if (!string.IsNullOrEmpty(name))
             {
                 products = products

@@ -21,4 +21,4 @@ C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\obj\
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\obj\Debug\netstandard2.0\E-Commerce-Shop.DataAccess.csproj.CopyComplete
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\obj\Debug\netstandard2.0\E-Commerce-Shop.DataAccess.dll
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\obj\Debug\netstandard2.0\E-Commerce-Shop.DataAccess.pdb
-C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\obj\Debug\netstandard2.0\E-Commerce-Shop.DataAccess.csprojAssemblyReference.cache
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.DataAccess\obj\Debug\netstandard2.0\E-Commerce-Shop.DataAccess.csproj.AssemblyReference.cache

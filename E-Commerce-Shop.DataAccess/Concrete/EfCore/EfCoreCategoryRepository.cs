@@ -10,13 +10,8 @@ namespace E_Commerce_Shop.DataAccess.Concrete.EfCore
         public EfCoreCategoryRepository(ShopContext context) : base(context)
         {
         }
-        private ShopContext ShopContext
-        {
-            get
-            {
-                return _context as ShopContext;
-            }
-        }
+        private ShopContext ShopContext => _context as ShopContext;
+
         public void DeleteProductFromCategory(int productId, int categoryId)
         {
 
