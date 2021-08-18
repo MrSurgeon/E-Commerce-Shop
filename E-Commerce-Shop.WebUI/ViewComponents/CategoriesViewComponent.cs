@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using E_Commerce_Shop.Business.Abstract;
 using E_Commerce_Shop.Entity;
 using E_Commerce_Shop.WebUI.ViewModels;
@@ -15,11 +16,11 @@ namespace E_Commerce_Shop.WebUI.ViewComponents
             _categoryService = categoryService;
         }
 
-        public IViewComponentResult Invoke()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
             var categoryViewModel = new CategoryViewModel()
             {
-                Categories = _categoryService.GetAll()
+                Categories = await _categoryService.GetAllAsync()
             };
             if (RouteData.Values["category"] != null)
             {

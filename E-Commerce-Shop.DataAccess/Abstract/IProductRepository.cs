@@ -12,5 +12,6 @@ namespace E_Commerce_Shop.DataAccess.Abstract
         int GetCountByCategory(string name);
         List<Product> GetHomePageProducts();
         void Update(Product product, int[] categoryIds);
+
     }
 }

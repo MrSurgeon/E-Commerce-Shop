@@ -13,7 +13,7 @@ namespace E_Commerce_Shop.DataAccess.Concrete.EfCore
         }
         private ShopContext ShopContext => _context as ShopContext;
 
-        public List<Order> GetGetOrderWithItemsByUserId(string userId)
+        public List<Order> GetOrderWithItemsByUserId(string userId)
         {
 
             var orders = ShopContext.Orders

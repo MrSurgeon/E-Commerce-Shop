@@ -17,7 +17,7 @@ namespace E_Commerce_Shop.WebApi
         {
             Configuration = configuration;
         }
-
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -32,6 +32,17 @@ namespace E_Commerce_Shop.WebApi
             services.AddScoped<IProductService, ProductManager>();
             services.AddScoped<IOrderService, OrderManager>();
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+                    });
+            });
+
             services.AddControllers();
         }
 
@@ -44,6 +55,10 @@ namespace E_Commerce_Shop.WebApi
             }
 
             app.UseRouting();
+
+            app.UseCors(MyAllowSpecificOrigins);
+
+
 
             app.UseAuthorization();
 

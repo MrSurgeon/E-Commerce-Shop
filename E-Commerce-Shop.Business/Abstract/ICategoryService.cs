@@ -1,12 +1,13 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using E_Commerce_Shop.Entity;
 
 namespace E_Commerce_Shop.Business.Abstract
 {
     public interface ICategoryService : IValidator<Category>
     {
-        Category GetById(int id);
-        List<Category> GetAll();
+        Task<Category> GetByIdAsync(int id);
+        Task<List<Category>> GetAllAsync();
         void Create(Category entity);
         void Update(Category entity);
         void Delete(Category entity);

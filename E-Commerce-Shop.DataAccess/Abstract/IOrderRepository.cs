@@ -5,6 +5,6 @@ namespace E_Commerce_Shop.DataAccess.Abstract
 {
     public interface IOrderRepository : IRepository<Order>
     {
-        List<Order> GetGetOrderWithItemsByUserId(string userId);
+        List<Order> GetOrderWithItemsByUserId(string userId);
     }
 }

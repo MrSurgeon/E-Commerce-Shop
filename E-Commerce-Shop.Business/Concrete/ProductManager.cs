@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using E_Commerce_Shop.Business.Abstract;
 using E_Commerce_Shop.DataAccess.Abstract;
 using E_Commerce_Shop.Entity;
@@ -13,15 +14,29 @@ namespace E_Commerce_Shop.Business.Concrete
         {
             _unitOfWork = unitOfWork;
         }
-        public Product GetById(int id)
+
+        public async Task DeleteAsync(Product product)
         {
-            //İş Kurallarını Oluştur
-            return _unitOfWork.Products.GetById(id);
+            _unitOfWork.Products.Delete(product);
+            await _unitOfWork.SaveAsync();
         }
-        public List<Product> GetAll()
+
+        public async Task<Product> CreateAsync(Product entity)
+        {
+           await _unitOfWork.Products.CreateAsync(entity);
+           await _unitOfWork.SaveAsync();
+           return entity;
+        }
+
+        public async Task<Product> GetByIdAsync(int id)
         {
             //İş Kurallarını Oluştur
-            return _unitOfWork.Products.GetAll();
+            return await _unitOfWork.Products.GetByIdAsync(id);
+        }
+        public async Task<List<Product>> GetAllAsync()
+        {
+            //İş Kurallarını Oluştur
+            return await _unitOfWork.Products.GetAllAsync();
         }
         public bool Create(Product entity)
         {
@@ -107,6 +122,15 @@ namespace E_Commerce_Shop.Business.Concrete
                 return true;
             }
             return false;
+        }
+
+        public async Task UpdateAsync(Product current, Product updated)
+        {
+            current.Url = updated.Url;
+            current.Name = updated.Name;
+            current.Price = updated.Price;
+
+           await _unitOfWork.SaveAsync();
         }
 
         public string ErrorMessage { get; set; }

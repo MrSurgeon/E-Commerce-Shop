@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebApi\\E-Commerce-Shop.WebApi.csproj": {}
+    "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\e-commerce-shop.webapi\\E-Commerce-Shop.WebApi.csproj": {}
   },
   "projects": {
     "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Business\\E-Commerce-Shop.Business.csproj": {
@@ -196,14 +196,14 @@
         }
       }
     },
-    "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebApi\\E-Commerce-Shop.WebApi.csproj": {
+    "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\e-commerce-shop.webapi\\E-Commerce-Shop.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebApi\\E-Commerce-Shop.WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\e-commerce-shop.webapi\\E-Commerce-Shop.WebApi.csproj",
         "projectName": "E-Commerce-Shop.WebApi",
-        "projectPath": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebApi\\E-Commerce-Shop.WebApi.csproj",
+        "projectPath": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\e-commerce-shop.webapi\\E-Commerce-Shop.WebApi.csproj",
         "packagesPath": "C:\\Users\\Tarık\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebApi\\obj\\",
+        "outputPath": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\e-commerce-shop.webapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Tarık\\AppData\\Roaming\\NuGet\\NuGet.Config",

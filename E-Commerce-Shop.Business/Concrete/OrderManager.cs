@@ -22,7 +22,7 @@ namespace E_Commerce_Shop.Business.Concrete
 
         public List<Order> GetOrderWithItemsByUserId(string userId)
         {
-            return _unitOfWork.Orders.GetGetOrderWithItemsByUserId(userId);
+            return _unitOfWork.Orders.GetOrderWithItemsByUserId(userId);
         }
     }
 }
