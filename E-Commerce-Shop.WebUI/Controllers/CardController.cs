@@ -58,12 +58,12 @@ namespace E_Commerce_Shop.WebUI.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddToCard(int? productId, int? quantity)
+        public async Task<IActionResult> AddToCard(int? productId, int? quantity)
         {
             var userId = _userManager.GetUserId(User);
             if (userId != null)
             {
-                if (_cardService.AddToCard(userId, productId, quantity))
+                if (await _cardService.AddToCardAsync(userId, productId, quantity))
                 {
                     return Redirect("/cardList");
                 }
@@ -283,11 +283,11 @@ namespace E_Commerce_Shop.WebUI.Controllers
                     };
                     a--;
                     basketItems.Add(basketItem);
-                     para += item.Price;
+                    para += item.Price;
                 } while (a != 0);
-                
+
             }
-           
+
             Console.WriteLine("Toplam Basket değeri" + para);
 
             request.BasketItems = basketItems;

@@ -26,11 +26,11 @@ namespace E_Commerce_Shop.WebUI.Controllers
             _productService = productService;
             _categoryService = categoryService;
         }
-        public IActionResult ProductList()
+        public async Task<IActionResult> ProductList()
         {
             return View(new ProductListViewModel()
             {
-                Products = _productService.GetAll()
+                Products = await _productService.GetAllAsync()
             });
         }
 
@@ -81,7 +81,7 @@ namespace E_Commerce_Shop.WebUI.Controllers
         }
 
         [HttpGet]
-        public IActionResult EditProduct(int? id)
+        public async Task<IActionResult> EditProduct(int? id)
         {
             if (id != null)
             {
@@ -97,7 +97,7 @@ namespace E_Commerce_Shop.WebUI.Controllers
                     Url = result.Url,
                     ImageUrl = result.ImageUrl,
                     SelectedCategories = selectedCategories,
-                    AllCategories = _categoryService.GetAll(),
+                    AllCategories = await _categoryService.GetAllAsync(),
                     IsApproved = result.IsApproved,
                     IsHome = result.IsHome
                 });
@@ -112,7 +112,7 @@ namespace E_Commerce_Shop.WebUI.Controllers
             {
                 return View(adminEditViewModel);
             }
-            if (_productService.GetById(adminEditViewModel.ProductId) == null)
+            if (await _productService.GetByIdAsync(adminEditViewModel.ProductId) == null)
             {
                 return NotFound();
             }
@@ -146,11 +146,11 @@ namespace E_Commerce_Shop.WebUI.Controllers
             return View(adminEditViewModel);
         }
         [HttpPost]
-        public IActionResult DeleteProduct(int? productId)
+        public async Task<IActionResult> DeleteProduct(int? productId)
         {
             if (productId != null)
             {
-                var result = _productService.GetById((int)productId);
+                var result = await _productService.GetByIdAsync((int)productId);
                 if (result != null)
                 {
                     _productService.Delete(result);
@@ -167,11 +167,11 @@ namespace E_Commerce_Shop.WebUI.Controllers
             return NotFound();
         }
 
-        public IActionResult CategoryList()
+        public async Task<IActionResult> CategoryList()
         {
             return View(new AdminCategoryViewModel()
             {
-                Categories = _categoryService.GetAll()
+                Categories = await _categoryService.GetAllAsync()
             });
         }
 
@@ -252,9 +252,9 @@ namespace E_Commerce_Shop.WebUI.Controllers
         }
 
         [HttpPost]
-        public IActionResult DeleteCategory(int? id)
+        public async Task<IActionResult> DeleteCategory(int? id)
         {
-            var result = _categoryService.GetById((int)id);
+            var result = await _categoryService.GetByIdAsync((int)id);
             if (result != null)
             {
                 _categoryService.Delete(result);
@@ -270,12 +270,12 @@ namespace E_Commerce_Shop.WebUI.Controllers
         }
 
         [HttpPost]
-        public IActionResult DeleteProductFromCategory(int? productId, int? categoryId)
+        public async Task<IActionResult> DeleteProductFromCategory(int? productId, int? categoryId)
         {
             if (productId != null || categoryId != null)
             {
-                var productResult = _productService.GetById((int)productId);
-                var categoryResult = _categoryService.GetById((int)categoryId);
+                var productResult = await _productService.GetByIdAsync((int)productId);
+                var categoryResult =await _categoryService.GetByIdAsync((int)categoryId);
                 if (productResult != null && categoryResult != null)
                 {
                     _categoryService.DeleteProductFromCategory((int)productId, (int)categoryId);
@@ -285,7 +285,7 @@ namespace E_Commerce_Shop.WebUI.Controllers
             return NotFound();
         }
 
-       
+
         private async Task<string> ImageToDepo(IFormFile file)
         {
             var extension = Path.GetExtension(file.FileName);

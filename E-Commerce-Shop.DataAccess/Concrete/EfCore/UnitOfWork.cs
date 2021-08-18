@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using E_Commerce_Shop.DataAccess.Abstract;
 
 namespace E_Commerce_Shop.DataAccess.Concrete.EfCore
@@ -24,6 +25,11 @@ namespace E_Commerce_Shop.DataAccess.Concrete.EfCore
         public void Save()
         {
             _context.SaveChanges();
+        }
+
+        public async Task<int> SaveAsync()
+        {
+           return await _context.SaveChangesAsync();
         }
 
         public ICardRepository Cards => _cardRepository = _cardRepository ?? new EfCoreCardRepository(_context);

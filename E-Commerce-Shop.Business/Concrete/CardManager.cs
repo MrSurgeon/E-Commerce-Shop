@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using E_Commerce_Shop.Business.Abstract;
 using E_Commerce_Shop.DataAccess.Abstract;
 using E_Commerce_Shop.Entity;
@@ -13,7 +14,7 @@ namespace E_Commerce_Shop.Business.Concrete
             _unitOfWork = unitOfWork;
         }
 
-        public bool AddToCard(string userId, int? productId, int? quantity)
+        public async Task<bool> AddToCardAsync(string userId, int? productId, int? quantity)
         {
             var card = _unitOfWork.Cards.GetCardWithItemsAndProductByUserId(userId);
 
@@ -24,7 +25,7 @@ namespace E_Commerce_Shop.Business.Concrete
                     ErrorMessage += "Satın alınmak istenen ürün hakkında sorun oluştu. Tekrar deneyiniz";
                     return false;
                 }
-                if (_unitOfWork.Products.GetById((int)productId) == null)
+                if (await _unitOfWork.Products.GetByIdAsync((int)productId) == null)
                 {
                     ErrorMessage += "Satın alınmak istenen ürün bulunamadı. Tekrar deneyiniz";
                     return false;

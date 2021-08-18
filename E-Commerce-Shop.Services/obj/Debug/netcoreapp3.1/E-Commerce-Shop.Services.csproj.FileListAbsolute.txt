@@ -6,4 +6,5 @@ C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Services\obj\De
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Services\obj\Debug\netcoreapp3.1\E-Commerce-Shop.Services.csproj.CoreCompileInputs.cache
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Services\obj\Debug\netcoreapp3.1\E-Commerce-Shop.Services.dll
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Services\obj\Debug\netcoreapp3.1\E-Commerce-Shop.Services.pdb
-C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Services\obj\Debug\netcoreapp3.1\E-Commerce-Shop.Services.csprojAssemblyReference.cache
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Services\obj\Debug\netcoreapp3.1\E-Commerce-Shop.Services.csproj.AssemblyReference.cache
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Services\obj\Debug\netcoreapp3.1\E-Commerce-Shop.Services.GeneratedMSBuildEditorConfig.editorconfig

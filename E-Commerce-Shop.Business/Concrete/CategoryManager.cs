@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using E_Commerce_Shop.Business.Abstract;
 using E_Commerce_Shop.DataAccess.Abstract;
 using E_Commerce_Shop.Entity;
@@ -35,16 +36,16 @@ namespace E_Commerce_Shop.Business.Concrete
             _unitOfWork.Categories.DeleteProductFromCategory(productId, categoryId);
         }
 
-        public List<Category> GetAll()
+        public async Task<List<Category>> GetAllAsync()
         {
             //İş Kuralları
-            return _unitOfWork.Categories.GetAll();
+            return await _unitOfWork.Categories.GetAllAsync();
         }
 
-        public Category GetById(int id)
+        public async Task<Category> GetByIdAsync(int id)
         {
             //İş Kuralları
-            return _unitOfWork.Categories.GetById(id);
+            return await _unitOfWork.Categories.GetByIdAsync(id);
         }
 
         public Category GetByIdWithProducts(int id)

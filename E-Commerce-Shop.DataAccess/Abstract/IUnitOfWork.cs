@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 
 namespace E_Commerce_Shop.DataAccess.Abstract
 {
@@ -10,6 +11,8 @@ namespace E_Commerce_Shop.DataAccess.Abstract
         IProductRepository Products { get; }
 
         void Save();
+        Task<int> SaveAsync();
+
 
     }
 }

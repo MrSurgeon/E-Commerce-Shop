@@ -206,5 +206,6 @@ C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\bin\Debug
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Card\CardList.cshtml.g.cs
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Card\SuccessPayment.cshtml.g.cs
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Order\Orders.cshtml.g.cs
-C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
-C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\obj\Debug\netcoreapp3.1\E-Commerce-Shop.WebUI.csprojAssemblyReference.cache
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\obj\Debug\netcoreapp3.1\E-Commerce-Shop.WebUI.csproj.AssemblyReference.cache
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\obj\Debug\netcoreapp3.1\E-Commerce-Shop.WebUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.WebUI\obj\Debug\netcoreapp3.1\scopedcss\bundle\E-Commerce-Shop.WebUI.styles.css

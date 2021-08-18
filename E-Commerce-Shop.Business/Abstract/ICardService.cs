@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using E_Commerce_Shop.Entity;
 
 namespace E_Commerce_Shop.Business.Abstract
@@ -7,7 +8,7 @@ namespace E_Commerce_Shop.Business.Abstract
         void DeleteFromCart(string userId, int productId);
         void Create(string userId);
         Card GetCardWithItemsAndProductByUserId(string userId);
-        bool AddToCard(string userId, int? productId, int? quantity);
+        Task<bool> AddToCardAsync(string userId, int? productId, int? quantity);
         void ClearCard(int cartId);
     }
 }
