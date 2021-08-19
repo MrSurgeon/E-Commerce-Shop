@@ -1,14 +1,14 @@
 # E-Commerce-Shop
 
-- Bu proje basit E-Ticaret uygulaması içermektedir. 
-- Projemin asıl amacı katmanlı mimarinin bir web sitesi arka planını nasıl oluşturduğunu gösterebilmektir.
-- Login, Shopping Card, Order ve CRUD operasyonları genel çerçevede ele alınmıştır.
+- Bu proje basit E-Ticaret uygulamasÄ± iÃ§ermektedir. 
+- Projemin asÄ±l amacÄ± katmanlÄ± mimarinin bir web sitesi arka planÄ±nÄ± nasÄ±l oluÅŸturduÄŸunu gÃ¶sterebilmektir.
+- Login, Shopping Card, Order ve CRUD operasyonlarÄ± genel Ã§erÃ§evede ele alÄ±nmÄ±ÅŸtÄ±r.
 
-PROJE ÇALIŞTIRILMADAN ÖNCE YAPILACAKLAR:
+PROJE Ã‡ALIÅTIRILMADAN Ã–NCE YAPILACAKLAR:
 
-- Proje de EF Core ORM ve Identity Core Package olarak eklenmiştir. Sürümler .csproj dosyalarından incelenebilir.
-- Bu kısımdan sonra projede Database Connection String değerlerini web sitesi için WebUI projesi altındaki appsettings.json dosyasından, WebAPI için ilgili projenin appsettings.json dosyasından değiştirebilirsiniz.
-- Migration komutları: (projelerin ana dizininde) 
-						dotnet ef migrations add InitialCreate -s e-commerce-shop.webui -c ShopContext -p e-commerce-shop.dataaccess
-						dotnet ef migrations add InitialIdentity -s e-commerce-shop.webui -c ApplicationContext -p e-commerce-shop.webui
-- Web projesinde View kısımları için Bootstrap ve Jquery validation dosyaları ilgili dizinde npm install komutu ile eklenmelidir.  
+- Proje de EF Core ORM ve Identity Core Package olarak eklenmiÅŸtir. SÃ¼rÃ¼mler .csproj dosyalarÄ±ndan incelenebilir.
+- Bu kÄ±sÄ±mdan sonra projede Database Connection String deÄŸerlerini web sitesi iÃ§in WebUI projesi altÄ±ndaki appsettings.json dosyasÄ±ndan, WebAPI iÃ§in ilgili projenin appsettings.json dosyasÄ±ndan deÄŸiÅŸtirebilirsiniz.
+- Migration komutlarÄ±: (projelerin ana dizininde) 
+						* dotnet ef migrations add InitialCreate -s e-commerce-shop.webui -c ShopContext -p e-commerce-shop.dataaccess
+						* dotnet ef migrations add InitialIdentity -s e-commerce-shop.webui -c ApplicationContext -p e-commerce-shop.webui
+- Web projesinde View kÄ±sÄ±mlarÄ± iÃ§in Bootstrap ve Jquery validation dosyalarÄ± ilgili dizinde npm install komutu ile eklenmelidir.  
