@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "x+mqJwf6/b4PSOQ2liLulj7hK8qUMEVc6GEHQ2Oc0zdBFDEe1yNZ9qPH+Oct5wT6QS2qEzo19kR9zb2vgIdEQA==",
+  "dgSpecHash": "QmGEcIEc/O1vFHfk93I341cStYGMP/zOMvGt7rKkOI/lG7KjLYsw/KL0bmH1b58N38L+s2yZrpywOjvty05uww==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Services\\E-Commerce-Shop.Services.csproj",
+  "projectFilePath": "C:\\Users\\Tarık\\source\\repos\\E-Commerce-Shop\\E-Commerce-Shop.Services\\E-Commerce-Shop.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tarık\\.nuget\\packages\\mailkit\\2.6.0\\mailkit.2.6.0.nupkg.sha512",
     "C:\\Users\\Tarık\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.4\\microsoft.extensions.dependencyinjection.3.1.4.nupkg.sha512",

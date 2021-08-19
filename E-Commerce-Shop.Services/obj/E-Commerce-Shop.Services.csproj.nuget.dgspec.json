@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Services\\E-Commerce-Shop.Services.csproj": {}
+    "C:\\Users\\Tarık\\source\\repos\\E-Commerce-Shop\\E-Commerce-Shop.Services\\E-Commerce-Shop.Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Services\\E-Commerce-Shop.Services.csproj": {
+    "C:\\Users\\Tarık\\source\\repos\\E-Commerce-Shop\\E-Commerce-Shop.Services\\E-Commerce-Shop.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Services\\E-Commerce-Shop.Services.csproj",
+        "projectUniqueName": "C:\\Users\\Tarık\\source\\repos\\E-Commerce-Shop\\E-Commerce-Shop.Services\\E-Commerce-Shop.Services.csproj",
         "projectName": "E-Commerce-Shop.Services",
-        "projectPath": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Services\\E-Commerce-Shop.Services.csproj",
+        "projectPath": "C:\\Users\\Tarık\\source\\repos\\E-Commerce-Shop\\E-Commerce-Shop.Services\\E-Commerce-Shop.Services.csproj",
         "packagesPath": "C:\\Users\\Tarık\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Services\\obj\\",
+        "outputPath": "C:\\Users\\Tarık\\source\\repos\\E-Commerce-Shop\\E-Commerce-Shop.Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Tarık\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -26,7 +26,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,7 +37,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "NETCore.MailKit": {
               "target": "Package",
@@ -60,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.411\\RuntimeIdentifierGraph.json"
         }
       }
     }

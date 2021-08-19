@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hcdSnHMfDJ1FQfupszFLOWU5FdbaQm89a59aj9hiQ8sga+Lxr4N6EPti4s/kO7tfSO0tlHq0kqHDvNMCTC54Pg==",
+  "dgSpecHash": "8Jcm6XerevWwLQ/xQFwhaBQlZFkYfd/o0PWFAn+Y1B1Dpbs9lhqBLx5VtM6M/Ya2k8WNk9srhQungZzhNbk/KA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Entity\\E-Commerce-Shop.Entity.csproj",
+  "projectFilePath": "C:\\Users\\Tarık\\source\\repos\\E-Commerce-Shop\\E-Commerce-Shop.Entity\\E-Commerce-Shop.Entity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tarık\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Tarık\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

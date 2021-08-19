@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IwFMYRmLgdgoMwF1LZcZ/m7vZc8Rq+5DjJkCPS/Lx7MvJb/q7ZuzadV/Ar3zlrnlJcgNhaTg8qteTDTWa6R/lg==",
+  "dgSpecHash": "k+opjDebuAB8ipIOUGsfMDPYQyZFE0hcfAdjCUEvzGXp90uudDj7sWpwlVQszstvJ5zjTzpdr0FFlAY59DFpSQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\e-commerce-shop.webapi\\E-Commerce-Shop.WebApi.csproj",
+  "projectFilePath": "C:\\Users\\Tarık\\Source\\Repos\\E-Commerce-Shop\\E-Commerce-Shop.WebApi\\E-Commerce-Shop.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tarık\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.17\\microsoft.aspnetcore.cryptography.internal.3.1.17.nupkg.sha512",
     "C:\\Users\\Tarık\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.17\\microsoft.aspnetcore.cryptography.keyderivation.3.1.17.nupkg.sha512",

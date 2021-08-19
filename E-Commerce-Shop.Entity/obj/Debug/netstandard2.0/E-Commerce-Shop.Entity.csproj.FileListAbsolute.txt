@@ -17,3 +17,11 @@ C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debu
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.pdb
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.csproj.AssemblyReference.cache
 C:\Users\Tarık\Documents\GitHub\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tarık\source\repos\E-Commerce-Shop\E-Commerce-Shop.Entity\bin\Debug\netstandard2.0\E-Commerce-Shop.Entity.deps.json
+C:\Users\Tarık\source\repos\E-Commerce-Shop\E-Commerce-Shop.Entity\bin\Debug\netstandard2.0\E-Commerce-Shop.Entity.dll
+C:\Users\Tarık\source\repos\E-Commerce-Shop\E-Commerce-Shop.Entity\bin\Debug\netstandard2.0\E-Commerce-Shop.Entity.pdb
+C:\Users\Tarık\source\repos\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.AssemblyInfoInputs.cache
+C:\Users\Tarık\source\repos\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.AssemblyInfo.cs
+C:\Users\Tarık\source\repos\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.csproj.CoreCompileInputs.cache
+C:\Users\Tarık\source\repos\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.dll
+C:\Users\Tarık\source\repos\E-Commerce-Shop\E-Commerce-Shop.Entity\obj\Debug\netstandard2.0\E-Commerce-Shop.Entity.pdb

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+z5g3aMhfNhb3Tryx7mIftA/nFklHQQSfanIRq+fogzPsUiHtMEz9EvoXOC1oUWvBIk2E8xm+kI+IYOiQQ/l/g==",
+  "dgSpecHash": "XspyYFNRv2K8MeBVC3uCsIoH4MyPMuUfNPZSDf5obHVtWSyy/wvr47NYUp57TeSsuHkuv+MlCD74YP3+xRDnMw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebUI\\E-Commerce-Shop.WebUI.csproj",
+  "projectFilePath": "C:\\Users\\Tarık\\source\\repos\\E-Commerce-Shop\\e-commerce-shop.webui\\E-Commerce-Shop.WebUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tarık\\.nuget\\packages\\iyzipay\\2.1.39\\iyzipay.2.1.39.nupkg.sha512",
     "C:\\Users\\Tarık\\.nuget\\packages\\mailkit\\2.6.0\\mailkit.2.6.0.nupkg.sha512",

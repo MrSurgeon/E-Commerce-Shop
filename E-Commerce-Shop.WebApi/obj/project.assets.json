@@ -1113,11 +1113,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebApi\\E-Commerce-Shop.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\Tarık\\Source\\Repos\\E-Commerce-Shop\\E-Commerce-Shop.WebApi\\E-Commerce-Shop.WebApi.csproj",
       "projectName": "E-Commerce-Shop.WebApi",
-      "projectPath": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebApi\\E-Commerce-Shop.WebApi.csproj",
+      "projectPath": "C:\\Users\\Tarık\\Source\\Repos\\E-Commerce-Shop\\E-Commerce-Shop.WebApi\\E-Commerce-Shop.WebApi.csproj",
       "packagesPath": "C:\\Users\\Tarık\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.WebApi\\obj\\",
+      "outputPath": "C:\\Users\\Tarık\\Source\\Repos\\E-Commerce-Shop\\E-Commerce-Shop.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Tarık\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1134,14 +1134,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Business\\E-Commerce-Shop.Business.csproj": {
-              "projectPath": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Business\\E-Commerce-Shop.Business.csproj"
+            "C:\\Users\\Tarık\\Source\\Repos\\E-Commerce-Shop\\E-Commerce-Shop.Business\\E-Commerce-Shop.Business.csproj": {
+              "projectPath": "C:\\Users\\Tarık\\Source\\Repos\\E-Commerce-Shop\\E-Commerce-Shop.Business\\E-Commerce-Shop.Business.csproj"
             },
-            "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.DataAccess\\E-Commerce-Shop.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.DataAccess\\E-Commerce-Shop.DataAccess.csproj"
+            "C:\\Users\\Tarık\\Source\\Repos\\E-Commerce-Shop\\E-Commerce-Shop.DataAccess\\E-Commerce-Shop.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Tarık\\Source\\Repos\\E-Commerce-Shop\\E-Commerce-Shop.DataAccess\\E-Commerce-Shop.DataAccess.csproj"
             },
-            "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Entity\\E-Commerce-Shop.Entity.csproj": {
-              "projectPath": "C:\\Users\\Tarık\\Documents\\GitHub\\E-Commerce-Shop\\E-Commerce-Shop.Entity\\E-Commerce-Shop.Entity.csproj"
+            "C:\\Users\\Tarık\\Source\\Repos\\E-Commerce-Shop\\E-Commerce-Shop.Entity\\E-Commerce-Shop.Entity.csproj": {
+              "projectPath": "C:\\Users\\Tarık\\Source\\Repos\\E-Commerce-Shop\\E-Commerce-Shop.Entity\\E-Commerce-Shop.Entity.csproj"
             }
           }
         }
